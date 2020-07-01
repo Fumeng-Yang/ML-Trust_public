@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>trust literature.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="trust-and-machine-learning-interpretation-literature"><strong>Trust and Machine Learning Interpretation Literature</strong></h1>
+<p>by Fumeng (fumeng.yang@pnnl.gov, fy@brown.edu)</p>
+<p><code>Fumeng</code>: There are at least twice as many papers as what I list here...but I think these are enough unless we are missing important ones.</p>
+<h2 id="i-trust"><strong>I. Trust</strong></h2>
+<p><code>MUST AT LEAST CONSIDER TO CITE</code>: Sheridan 1988, Sheridan 1980, 83, 84, Lee and See 2004, Lee and Moray 1994, Rempel et al 1985, Parasuraman 1993, Muir and Moray 1996, Singh 1993,  S. Zuboff (1988), Miller 2002 2004, Hwang and Buergers 1997, Couch and Jones (1997), Rotter 1967, Dijkstra et al. 1998, Dijkstra 1999; Muir 1989</p>
+<h3 id="most-important-papers"><strong>Most important papers</strong></h3>
+<ul>
+<li>
+<p>(<strong>Survey</strong>) <strong>Trust in automation</strong> - Lee &amp; See 2004</p>
+</li>
+<li>
+<p><strong>Measuring Human-Computer Trust</strong> - Madsen &amp; Gregor 2000</p>
+</li>
+<li>
+<p>(<strong>Very Important</strong>) <strong>Trust Calibration within a Human-Robot Team: Comparing Automatically Generated Explanations</strong> [cb 13, Wang &amp; Pynadath, 2013]</p>
+<ul>
+<li>The study is a between-subject design. Each participant interacted with one of the six simulated robots.</li>
+<li>AMT</li>
+<li>low, high x confidence-level explanation, observation explanation and no explanation</li>
+<li>predisposition to trust [41], propensity to trust [42]</li>
+<li><strong>(feedback)</strong> If there is danger present inside the building, the human teammate will be fatally injured without the protective gear...have to restart</li>
+<li>the impact of individual differences on trust is not the focus of this paper, such analyses and results are not included here.</li>
+<li>While the scenario is military reconnaissance, it is simple enough that it does not require prior experience to complete the mission in the study,e.g., the task does not need knowledge of clearing procedures for searching buildings.</li>
+<li>So the human teammate is incentivized to consider the robot’s findings before deciding how to enter the building.</li>
+<li>The 2x3 ANOVA tests also show significant main effects of explanation on trust,</li>
+</ul>
+</li>
+<li>
+<p>(<strong>Very Important</strong>) <strong>Trust, control strategies and allocation of function in human-machine system</strong> (trust per trial) [1992, cb 1040]</p>
+<ul>
+<li>19 undergrads</li>
+<li>3 x 2h sessions, 3 days, 2h a day; each 10 trials x 3 or 6m, 10 x 6m</li>
+<li>10 training + 10, 5 + 1 error + rest; 20 all errors</li>
+<li>orange juice pasteurization plant..? challenging task</li>
+<li>auto or manual mode, or combine</li>
+<li>receive 0.1$/trial if acc &gt;90%; <code>Muir 1989</code></li>
+<li>a fault of 15%, 20%, 30%, &amp; 35% err magnitude</li>
+<li>NOT AT ALL, COMPLETELY</li>
+<li>a description of trust and how it applies to inanimate objects (<code>do we need this?</code>)</li>
+<li>questions they asked might be useful</li>
+<li>casual model, recovery of trust</li>
+<li>the direction of the casual relation between an occurrence of a fault and the decline in the level of trust seems <strong>unambiguous</strong>.</li>
+<li>more faults, more relied on auto mode</li>
+<li>After training trials operators could use any combination of automatic or manual control that they wished</li>
+<li>Using naive operators facilitated an analysis of how trust and control strategies develop as operators are trained with new equipment.</li>
+<li>while the operators were initially naive, the stable control strategies they developed by the 2nd hour indicate an understanding and patterns of controlling the system that might be comparable to trained operators. The model which we develop takes account of the learning curve, so that training to steady state as done by Muir (doc dis) is neither necessary nor apporitate in this experiment.</li>
+</ul>
+</li>
+<li>
+<p>(<strong>Very Important</strong>) <strong>Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err</strong> [cb 92, 2015]</p>
+<ul>
+<li>
+<p><code>Fumeng:</code> The performance of the models they used is very poor. The estimating grades one is equal or slightly better or even worse than the participants. iIt is not a surprise for me that participants trust more on their own because they think they can improve while the models can't.</p>
+<p>In their experiments, when using a different model that absolutely outform human performance or the prediction is too difficult to make, people tend to slightly trust the model more.</p>
+</li>
+<li>
+<p>evidence-based algorithms more accurately</p>
+</li>
+<li>
+<p>when forecasters are deciding whether to use a human forecaster or a statistical algorithm, they often choose the human forecaster</p>
+</li>
+<li>
+<p>algorithm aversion</p>
+</li>
+<li>
+<p>Overcoming Algorithm Aversion: People Will Use Imperfect Algorithms If They Can (Even Slightly) Modify Them &amp; Transparency</p>
+</li>
+<li>
+<p>the admissions office had created a statistical model that was designed to forecast student performance. participants received detailed descriptions of the eight variables that they would receive about each applicant</p>
+</li>
+<li>
+<p>Study 1</p>
+<ul>
+<li>the 1st stage
+<ul>
+<li>control: skipped</li>
+<li>model-and-human condition (n = 90): for each of the 15 applicants, make their own forecast, get feedback showing their own prediction, the model’s prediction, and the applicant’s true percentile.</li>
+<li>human condition: make a forecast and then get feedback showing their own prediction and the applicant’s true percentile.</li>
+<li>model condition: get feedback showing the model’s prediction and the applicant’s true percentile.</li>
+<li>They were not incentivized for accurately making these forecasts</li>
+</ul>
+</li>
+<li>the 2nd stage
+<ul>
+<li>they would make 10 “official” incentivized estimates</li>
+<li>Would you like your estimates or the model’s estimates to determine your bonuses for ALL 10 rounds?</li>
+<li>Use only the statistical model’s estimates to determine my bonuses for all 10 rounds</li>
+<li>Use only my estimates to determine my bonuses for all 10 rounds.</li>
+<li>They received no feedback about their own or the model’s performance while completing these forecasts.</li>
+<li>After the study, Belief and Confidence Measures (model and themselves)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Study 2</p>
+<ul>
+<li>model and human</li>
+<li>different bonus strategies</li>
+</ul>
+</li>
+<li>
+<p>Study 3</p>
+<ul>
+<li>predicting airlines passengers</li>
+<li>10 unincentivized forecasts</li>
+<li>all participants completed 1 incentivized forecast instead of 10. Thus, their decision about whether to bet on the model’s forecast or their own pertained to the judgment of a single state.</li>
+<li>a perfect forecast. This bonus decreased by $0.15 for each additional unit of error associated with their estimate</li>
+<li>learned this payment rule before starting the first stage</li>
+</ul>
+</li>
+<li>
+<p>Study 4</p>
+<ul>
+<li>chose between a past participant’s forecasts and the model’s instead of between their own forecasts and the model’s.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="papers-that-are-important-because-they-had-experiments"><strong>Papers that are important because they had experiments</strong></h3>
+<ul>
+<li>
+<p><strong>Trust between humans and machines, and the design of decision aids</strong> [cb 591, Muir 1987]</p>
+<ul>
+<li><code>Fumeng: this is not the thing... Muir Doc thesis in 1989 is important but I cam't find it...</code></li>
+<li>Early in a relationship, a person bases his trust upon the predictability of another person's behaviours;</li>
+<li>Later in a relationship, trust in another person is based upon the attribution of a dependable disposition; the opportunity must exist for the person to be undependable; the human requires to make a generalization about a machine's dependability.</li>
+<li>The final stage in the growth of trust between humans is the development of faith</li>
+</ul>
+</li>
+<li>
+<p><strong>The persuasive power of data visualization</strong> [cb 45, Pandey ... Bertini 2014]</p>
+</li>
+<li>
+<p><strong>Affective Processes in Human–Automation Interactions</strong> [cb 52, Merritt 2011]</p>
+<ul>
+<li>affect, mood was manipulated twice—once prior to training and again prior to the task. Thus, a 2 (training mood) × 2 (task mood) × 2 (machine accuracy) between-subjects design was used.</li>
+<li>A total of 130 students participated for extra credit.</li>
+<li>in an X-Ray Screening Task (cf. Merritt &amp; Ilgen, 2008)</li>
+<li>Included in the training program was information (verbal and visual) concerning how to identify guns and knives in the X-Ray Task. Participants then completed <code>10 practice trials</code> and received feedback. They next were presented with information on how to use the AWD and watched the AWD perform <code>10 trials</code> so that they could observe its reliability.</li>
+<li>The actual reliability of the AWD was set to either 80% or 90% to ensure adequate variance</li>
+<li>60 X-ray trials divided into four task blocks.</li>
+<li>before / after blocks</li>
+<li>Liking Scale Items</li>
+<li>trust per block</li>
+<li>dynamic</li>
+<li>Manipulation
+<ul>
+<li>Participants then completed 10 practice trials and received feedback. They next were presented with information on how to use the AWD and watched the AWD perform 10 trials so that they could observe its reliability.</li>
+<li><strong>recorded their own initial opinion</strong> regarding whether or not the image contained a weapon.</li>
+<li>Next, they received advice from the AWD and recorded their final decision. Thus, it was possible to ascertain whether participants changed their opinion after viewing the AWD’s recommendation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>I Trust It, but I Don’t Know Why: Effects of Implicit Attitudes Toward Automation on Trust in an Automated System</strong> [cb 63, Merritt 2013]</p>
+<ul>
+<li>completed the explicit propensity to trust measure</li>
+<li>implicit attitude toward automation measure</li>
+<li>a 30-trial X-ray screening task similar to that used in past research (three blocks of 10)</li>
+<li>cognitive load</li>
+<li>six-item self-report scale employed by Merritt (2011). The item responses were on a 5-point Likert-type scale ranging from 1 (strongly disagree) to 5 (strongly agree).</li>
+<li>This study was an online, three-condition, within-subjects design in which each participant encountered three levels of automation performance (clearly good, ambiguous, and clearly poor). The sample was 69 college students</li>
+<li>No practice?</li>
+<li>in an ambiguous / poor situation, implicit MIGHT be a better predictor of trust</li>
+<li>On each slide, participants first <strong>provided their initial</strong>, unaided decision, next received the ABI’s advice, and then made a final decision. No performance feedback was provided. The 30 slides were divided into three blocks of 10.</li>
+</ul>
+</li>
+<li>
+<p><strong>Can computer personalities be human personalities?</strong> [Nass et al, 1995, cb 665]</p>
+<ul>
+<li>would respond to similar human personalities</li>
+<li>2x2 between , balanced, N = 48, dominant and submissive subjects were randomly matched with either a dominant or submissive computer.</li>
+<li>desert survival items</li>
+<li>rating 10-Likert scale</li>
+</ul>
+</li>
+<li>
+<p><strong>Brains or Beauty: How to Engender Trust in User-Agent Interactions</strong> [Yuksel et al, cb 4, 2017]</p>
+<ul>
+<li>we investigate two factors that can engender user trust in agents: reliability and attractiveness of agents</li>
+<li>Participants took part in a within-subject 2 (high vs. low reliability)× 2 (high vs. neutral attractiveness) agency design. Participants answered four sets of 15 questions.</li>
+<li>We stressed to participants that the agent presented at each trial was <code>independent</code> of agents from  <code>any previous trials</code> in order to avoid attribution of perceived trustworthiness from previous agents.</li>
+<li>In the high-reliability conditions, five out of the six suggestions offered by the agent were correct. In the low-reliability conditions, three out of the six suggestions offered by the agent were correct. The percentages for high and low reliability (83% and 50%, respectively) were taken from user trust literature. The order of the correct and incorrect answers were randomized in each trial.</li>
+<li>Twenty participants</li>
+<li>Metrics</li>
+<li>Whether to hear about an answer</li>
+<li>Self-Reported Measures of Trust in Agent,</li>
+<li>Self-Reported Measures of Perceived Accuracy of Agent</li>
+<li>Number of Correct Suggestions Accepted,</li>
+<li>Number of Incorrect Suggestions Accepted</li>
+<li>Length of Time Spent on Questions with Suggestions</li>
+<li>Number of Timeouts with Suggestions</li>
+<li>Number of Correct Answers</li>
+<li>Number of Incorrect Answers</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust, self-confidence and authority in human-machine systems</strong> [Inagaki et al, 1998, cb 44]</p>
+<ul>
+<li>simulated central heating system to maintain the temperature of the apartment complex shown at the bottom right of Fig. 1.</li>
+<li>The experiment has a 2 (mode) x 2 (fault) x 3 (reliability, 100%, 90 %, and 70 %) x 2 (order...?) factorial design</li>
+<li>participants? scale?</li>
+</ul>
+</li>
+<li>
+<p><code>(might be important)</code> <strong>Foundations for an Empirically Determined Scale of Trust in Automated Systems</strong> [Jian et al 2000, cited by 493]</p>
+<ul>
+<li>Based on how people feel about words, using factor analysis, cluster analysis, they contributed a questionnaire with 12-item 7 point</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p><strong>Trust between man and machine in a teleoperation system</strong> [Dassonville et al, 1996, cb 24]</p>
+<ul>
+<li>(1) self-confidence, (2) trust in others, (3) trust in machines, self-confidence, trust in others, and trust in machines in general</li>
+<li>qualify the a priori trust of</li>
+<li>interface...?</li>
+</ul>
+</li>
+<li>
+<p><strong>The impact of cognitive feedback on judgment performance and trust with decision aids</strong> [Seong &amp; Bisantz 2008, cb 61]</p>
+<ul>
+<li>identify aircraft moving</li>
+<li>interface (Jian... et al), left side</li>
+<li>three scenarios per day for 2 consecutive days (3 x 50 x 2)</li>
+<li>eight participants per condition</li>
+<li>a brief training exercise session designed to familiarize participants with the identification task was performed with the aid of the experimenter.</li>
+</ul>
+</li>
+<li>
+<p><strong>A model for predicting human trust in automated systems</strong> [Khasawneh et al, 2003, cb 16]</p>
+<ul>
+<li>During the experiment participants were asked to rate their trust in the system for every board on a 0-100 scale, and then they were asked to rate their overall trust in the system at the end of each experimental session.</li>
+<li>PCB boards containing 1, 2, 3, or no defects were inspected by the computer</li>
+<li>200 randomly ordered PCB boards</li>
+</ul>
+</li>
+<li>
+<p><strong>Measurement of Trust Over Time in Hybrid Inspection Systems</strong> [Master et al, 2005, cb 17]</p>
+<ul>
+<li>6 grads and undergrads</li>
+<li>The study used a single factor (response criterion at three system levels) within-subject design. Each repeated 3 times. 13-day time period</li>
+<li>the subjects inspected 24/48 PCB boards of a perfect hybrid inspection system, where the computer did not make any errors.</li>
+<li>interface, slider, left side</li>
+</ul>
+</li>
+<li>
+<p><strong>The effects of errors on system trust, self-confidence, and the allocation of control in route planning</strong> [de Vries, 2003, cb 164]</p>
+<ul>
+<li>they compared information reliability levels of 100%, 71%, and 43% in familiar versus unfamiliar environments.</li>
+<li>participants had to complete a total of 26 route-planning trials...in the first 20 trials participants familiarized themselves with both the manual and the automatic mode.</li>
+<li>The practice trials... complete 10 trials manually, and 10 automatically, ensuring that they would become equally experienced in both manual and automatic mode before they started completing the free trials.</li>
+<li>96 undergrads, a 2 (AER: low versus high) x 2 (MER: low versus high) between participants design.</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust in and Adoption of Online Recommendation Agents</strong> [Benbasat &amp; Wang, cited by 557]</p>
+<ul>
+<li>nature of trust in technological artifacts should not be fundamentally different from interpersonal trust</li>
+<li>Measurement Items (Competence, Benevolence, Integrity)</li>
+<li>Interface (9-point Likert Scale)</li>
+<li>We randomly assigned participants to the eight experimental conditions described in the previous section.</li>
+<li>two tasks, first choosing a digital camera for a good friend and then selecting another camera for a close family member.</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust in Adaptive Automation: The Role of Etiquette in Tuning Trust via Analogic and Affective Methods</strong> [Miller, 2004, cb 43]</p>
+<ul>
+<li>tested 16 participants, a flight simulation task</li>
+<li>Two levels of reliability were chosen: low, in which automation provided correct advice 60% of the time and high (80%).</li>
+<li>16 participants, the first two tasks</li>
+</ul>
+</li>
+<li>
+<p><strong>The mind in the machine: Anthropomorphism increases trust in an autonomous vehicle</strong> [Waytz et al, 2014, cb 155]</p>
+<ul>
+<li>100 participants, randomly assigned them to condition: Normal, Agentic, or Anthropomorphic</li>
+<li>practice course -&gt; two courses (6x2m) -&gt; questionnaire</li>
+</ul>
+</li>
+<li>
+<p><strong>The <code>perceived utility</code> of human and automated aids in a visual detection task</strong> [Dzindolet et al, 2002, cited by 165]</p>
+<ul>
+<li>
+<p>good references sources, ANOVA</p>
+</li>
+<li>
+<p>Experiment 1</p>
+<ul>
+<li>examine differences in the expectations people held of automated and human group members.</li>
+<li>2 (type of partner: human or automated) × 2 (expectation of aid’s performance: altered or control) between subjects design was utilized.</li>
+<li>68 students</li>
+<li>200 slides, believe the soldier was in the slide and the confidence they had in their decision on a 5-point Likert scale.</li>
+<li>4 practice trials (...told their aid usually made half as many errors as most students did. Participants performed four easy practice trials for which the aid supplied the correct decisions.)</li>
+<li>Their expected performance relative to that of their aid on a 9-point Likert-format scale anchored with <em>I will make many more errors</em> and <em>I will make far fewer errors</em>.</li>
+</ul>
+</li>
+<li>
+<p>Experiment 2</p>
+<ul>
+<li>a simple task, examine the effect of perceived utility, self-serving biases, and bias toward automation on reliance on automated and human aids</li>
+<li>2 (type of partner: automated or human) × 2 (utility of the aid: equal or superior) × 2 (feedback: provided or not) between-subjects design; The Contrast Detector” (or “The Prior Participant”) “made 20 errors; you made 40.</li>
+<li>128 students</li>
+<li>present the picture, a Likert scale 1-5 how confident .. decision</li>
+<li>4 practice trials</li>
+<li>20 (90%), 20 x 9 (~previous, halfen err rate), (feedback), 10 trials randomly chosen from the past 200 trials.</li>
+<li>half of the sliders contain a solider</li>
+<li>10 trials: automated aid creates less bias</li>
+<li>The strong bias toward self-reliance is also amazing...</li>
+</ul>
+</li>
+<li>
+<p>Experiment 3</p>
+<ul>
+<li>71 students</li>
+<li>All participants were told that their aid was imperfect (5%)</li>
+<li>3 (framing of past performance: positive ~, negative 10/200, none) × 2 (type of partner: human or automated)</li>
+<li>similar procedure, 200 + 10</li>
+<li>negative 10/200 + feedback will choose to follow the machine in the 10 trials</li>
+</ul>
+</li>
+<li>
+<p>in every study participants did rely on automated and human aids differently</p>
+</li>
+<li>
+<p>people expect machine makes less error than human partners</p>
+</li>
+</ul>
+</li>
+<li>
+<p>(<code>Important for data analysis &amp; whether we should give feedback</code>) <strong>Are Well-Calibrated Users Effective Users? Associations Between Calibration of Trust and Performance on an Automation-Aided Task</strong> [cb 8, Merritt et al, 2015]</p>
+<ul>
+<li>Due to the relative simplicity of the task, no formal training was provided</li>
+<li>participants were given no information about aid reliability prior to this task; therefore their calibration was not affected by any prior information.</li>
+<li>Participants were simply instructed to visually search for guns and knives in the luggage images and that an automated aid would provide advice,which they could either choose to accept or reject when making a final decision.</li>
+<li>first provided their initial opinion</li>
+<li>then received the advice of a fictitious automated screener.</li>
+<li>the participant made a final decision and received <strong>feedback</strong> on whether a weapon was in fact present in the image.</li>
+<li>each 20-slide block x 4, after each block rate trust</li>
+<li>In the increasing condition, the aid was correct 80%, 85%, 90%, and 95% of the time, respectively. In the decreasing condition the aid’s reliability decreased from 95% to 80% over the course of the blocks</li>
+<li>A second potential explanation may be that although users are able to identify a general or overall trend in reliability across a sample of observations (particularly when given performance feedback), the ability to determine the accuracy of any individual decision is more error prone.</li>
+<li>Although users may adjust their trust levels as reliability changes, they may not adjust the “correct” amount.</li>
+</ul>
+</li>
+<li>
+<p><strong>Not All Trust Is Created Equal: Dispositional and History- Based Trust in Human-Automation Interactions</strong> [cb 189, Merrit &amp; Ilgen 2008]</p>
+</li>
+<li>
+<p><strong>Tuning trust using cognitive cues for better human-machine</strong> collaboration [Cai &amp; Lin, 2010, cb 13]</p>
+<ul>
+<li>20 participants, within, Without/Visual/Auditory Assistance x Self-confidence (Fixed/Variable)</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust in New Decision Aid Systems</strong> [Atoyan et al, 2006, cb 56]</p>
+<ul>
+<li>incorporates a seven point rating scale in the range from &quot;not at all&quot; to &quot;extremely&quot;.</li>
+<li>Reveal the rules and algorithms used by the automation, and if it is possible, keep the algorithms simple</li>
+</ul>
+</li>
+<li>
+<p><strong>Affect- and cognition-based trust as foundations for interpersonal cooperation in organizations</strong> [McAllister, 1995, cb <code>7544</code>]</p>
+<ul>
+<li>human-human</li>
+<li>Trust is cognition-based in that &quot;we choose whom we will trust in which respects and under what circumstances, and we base the choice on what we take to be 'good reasons,' constituting evidence of worthiness.</li>
+<li>Affective foundations for trust also exist, consisting of the emotional bonds between individuals</li>
+<li>Reliably measured two dimensions of trust they labeled &quot;reliableness&quot; and &quot;emotional trust&quot;</li>
+<li>Questionnaire, 25 items, 194 managers and professionals</li>
+</ul>
+</li>
+</ul>
+<h3 id="other-important-surveys"><strong>Other Important Surveys</strong></h3>
+<ul>
+<li>
+<p>(famous survey paper) <strong>An Integrative Model of Organizational Trust</strong></p>
+</li>
+<li>
+<p><strong>Similarities and differences between human–human and human–automation trust: an integrative review</strong></p>
+</li>
+</ul>
+<h3 id="others"><strong>Others</strong></h3>
+<ul>
+<li>
+<p><strong>Trust in decision aids A Model and its training implications</strong></p>
+<ul>
+<li>a key feature of trust is that it evolves not only as the user gains experience with an aid, but also as the user moves through the various phases of a particular mission or task.</li>
+<li>nice summary of Muir, Barber, and Zuboff</li>
+</ul>
+</li>
+<li>
+<p><strong>On Deep Learning for Trust-Aware Recommendations in Social Networks</strong></p>
+<ul>
+<li>I think they are just using strength of the social network</li>
+</ul>
+</li>
+<li>
+<p><strong>A survey of trust in computer science and the Semantic Web</strong></p>
+</li>
+<li>
+<p><strong>Trustworthiness of command and control systems</strong> [Sheridan 1989, cb 104]</p>
+</li>
+<li>
+<p><strong>Humans and Automation: Use, Misuse, Disuse, Abuse</strong> (Parasuraman &amp; Riley, 1997, cb 2407)</p>
+<ul>
+<li>theoretical, empirical, and analytical studies</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust in Close Relationships</strong> [Rempel et al,  2973, 1985]</p>
+<ul>
+<li>questionaire based</li>
+</ul>
+</li>
+<li>
+<p><strong>Measurement of Trust in Hybrid Inspection Systems: Review and Evaluation of Current Methodologies and Future Approach</strong></p>
+<ul>
+<li>?</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust Models for Community Aware Identity Management</strong></p>
+</li>
+<li>
+<p><strong>Trust in Electronic Commerce: Definition and Theoretical Considerations</strong></p>
+</li>
+<li>
+<p><strong>On-line trust: concepts, evolving themes, a model</strong></p>
+<ul>
+<li>have references for human-human</li>
+<li>trust between software agents</li>
+</ul>
+</li>
+<li>
+<p><strong>Trust metrics in information fusion</strong></p>
+</li>
+<li>
+<p><strong>Towards a cognitive approach to human+machine cooperation in dynamic situations</strong></p>
+</li>
+<li>
+<p><strong>Measuring Levels of Trust</strong> [Couch &amp; Jones, 1997, cb 253]</p>
+</li>
+<li>
+<p><strong>Modeling Trust Negotiation for Web Services</strong></p>
+</li>
+<li>
+<p><strong>The Dyadic Trust Scale: Toward Understanding Interpersonal Trust in Close Relationship</strong></p>
+<ul>
+<li>Dyadic trust, human-human trust, benevolence, honesty</li>
+<li>Participants 195, survey</li>
+</ul>
+</li>
+<li>
+<p><strong>A Machine Learning Based Trust Evaluation Framework for Online Social Networks</strong></p>
+<ul>
+<li>Just the strength of social network</li>
+</ul>
+</li>
+<li>
+<p><strong>How do We Learn to Trust? A Confirmatory Tetrad Analysis of the Sources of Generalized Trust</strong> [Glanville &amp; Paxton, 2007, cb 218]</p>
+</li>
+</ul>
+<h3 id="summary-from-jean"><strong>Summary from Jean</strong></h3>
+<ul>
+<li>
+<p><strong>Madsen &amp; Gregor 2000</strong> article and actual measure (word doc) – This is a state measure that captures the antecedents of trust (personal attachment, faith, reliability, technical competence, understandability).  It is specifically designed for human-computer trust.  I adapted it for one of my human-human trust studies and found it to be pretty good.  I think all of the constructs predicted self-report trust in my study.</p>
+</li>
+<li>
+<p><strong>Mayer adapted for human-machine trust</strong> – this is the self-report measure of trust that I have had the most success with.  However, it was designed to measure human-human trust and I have never used this adapted version for human-machine trust (I adapted it for some upcoming human-machine trust research).  You should be able to just substitute UAV for your tool.  I think it’s pretty good, but if you don’t want to use this measure I believe Merritt has specifically designed a measure for human-machine trust I can get my hands on.</p>
+</li>
+<li>
+<p><strong>Merritt et al 2015</strong> -  Table three in this article shows the items for the perfect automation schema measure. I don’t know a lot about this measure.  I would consider it a trait or individual difference measure and the construct sounds really interesting to me.  I have never used it, but I think I know some who have and can reach out to them if you want me to.</p>
+</li>
+<li>
+<p><strong>Singh et al 1993</strong> – I can’t for the life of me find this measure, but the reference is attached.  I haven’t used this one either.  As you can tell from the reference it has been around for a while and I have heard the questions are a bit dated.  This is another trait/individual difference measure.</p>
+</li>
+<li>
+<p>For <strong>Madison &amp; Gregor and Mayer</strong> I can give you a lot more info if you want it.  For the others I know less.  Overall, I thought these measures would probably be best based on our conversation.  However, if none of these fit the bill or you are looking for more, I have a few more that I can pull together including some implicit measures of trust.</p>
+</li>
+<li>
+<p>(<strong>Muir</strong>) Automation that is predictable, dependable, and inspires faith that it will behave as expected in unknown situations will be seen as more trustworthy.</p>
+</li>
+<li>
+<p>(<strong>Lee and See</strong>) When trust in the automation was higher than self-confidence in manual operation, the participant tended to allocate the task to the automated system</p>
+</li>
+<li>
+<p><strong>Toward Establishing Trust in Adaptive Agents</strong></p>
+</li>
+</ul>
+<h3 id="trust-calibration"><strong>Trust Calibration</strong></h3>
+<ul>
+<li>
+<p><strong>A Design Methodology for Trust Cue Calibration in Cognitive Agents</strong></p>
+<ol>
+<li>Select a scenario that involves trust in a cognitive agent</li>
+<li>Conduct a task analysis to identify critical trust related tasks</li>
+<li>Identify key pieces of information for operator decision making</li>
+<li>Verify pieces of information against the trust cue taxonomy</li>
+<li>Construct a visual display representing this information</li>
+</ol>
+</li>
+<li>
+<p><strong>The Calibration of Trust in an Automated System: A Sensemaking Process</strong></p>
+</li>
+<li>
+<p><strong>A Design Methodology for Trust Cue Calibration in Cognitive Agents</strong></p>
+<ul>
+<li>case study</li>
+</ul>
+</li>
+</ul>
+<h2 id="ii-machine-learning-interpretation-via-visualization">II. <strong>Machine Learning Interpretation via Visualization</strong></h2>
+<h3 id="instance-based"><strong>Instance-based</strong></h3>
+<ul>
+<li><strong>Interpreting Black-Box Classifiers Using Instance-Level Visual Explanations (AD)</strong></li>
+<li><strong>Principles of explanatory debugging to personalize interactive machine learning</strong></li>
+</ul>
+<h3 id="feature--and-subset--based"><strong>Feature- and Subset- based</strong></h3>
+<ul>
+<li><strong>Familiarity Vs Trust: A Comparative Study of Domain Scientists’ Trust in Visual Analytics and Conventional Analysis Methods</strong> (AD)</li>
+<li>all papers from VIS 2017 Session: ML1</li>
+<li>“Why Should I Trust You?” Explaining the Predictions of Any Classifier</li>
+<li>A Workflow for Visual Diagnostics of Binary Classifiers using Instance-Level Explanations (AD)</li>
+<li>item The mythos of model interpretability</li>
+<li>Visualizing Dataflow Graphs of Deep Learning Models in TensorFlow</li>
+<li>Understanding black-box predictions via influence functions</li>
+<li>Grad-cam: Visual explanations from deep networks via gradient-based localization</li>
+<li>(!) <strong>The Role of Uncertainty, Awareness, and Trust in Visual Analytics</strong> (and its references)</li>
+<li>(references) Interacting with predictions: visual inspection of black-box machine learning models, ``By providing interactive partial dependence diagnostics, data scientists can understand how features affect the prediction
+overall.''</li>
+<li>Dis-function</li>
+<li>(references) ACTIVIS: Visual Exploration of Industry-Scale Deep Neural Network Models</li>
+<li>A Visual Interaction Framework for Dimensionality Reduction Based Data Exploration(AD)</li>
+<li>Opening black box Data Mining models using Sensitivity Analysis</li>
+<li>Opening the Black Box - Data Driven Visualization of Neural Networks.</li>
+<li>BaobabView: Interactive construction and analysis of decision trees.</li>
+<li>Seeking Inside the Black Box: Visualizing Statistical Learning With Plots of Individual Conditional Expectation</li>
+<li>Illuminating the “black box”: a randomization approach for understanding variable contributions in artificial neural networks</li>
+<li>Visualizing high-dimensional predictive model quality.</li>
+<li>Discovering Structure in High-Dimensional Data Through Correlation Explanation</li>
+<li>EnsembleMatrix: Interactive Visualization to Support Machine Learning with Multiple Classifiers</li>
+<li>Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization</li>
+</ul>
+<h2 id="some-self-citations">Some Self-citations</h2>
+<ul>
+<li>Empirical Analysis of the Subjective Impressions and Objective Measures of Domain Scientists’ Visual Analytic Judgments</li>
+<li>Beyond usability: Evaluation aspects of visual analytic environments.</li>
+</ul>
+
+</body>
+</html>

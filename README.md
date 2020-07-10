@@ -1,6 +1,10 @@
 # How Do Visual Explanations Foster End Users' Appropriate Trust in Machine Learning?
 
-This is almost the same repo as http://www.fmyang.com/projs/ml-trust/. I open this Github page for my OCD.
+Proceedings of the ACM Conference on Intelligent User Interfaces (IUI), 2020
+
+Authors: Fumeng Yang, Zhuanyi (Yi) Huang, Jean Scholtz, and Dustin L. Arendt
+
+Note: This is almost the same repo as http://www.fmyang.com/projs/ml-trust/. I open this Github page because of my OCD. 
 
 ## supplmaterials
    - `altenative-representations.pdf` The alternative visual representations considered and evaluated in our study;
@@ -16,3 +20,34 @@ This is almost the same repo as http://www.fmyang.com/projs/ml-trust/. I open th
 
 ## trust-literature.md
     Our literature review document.
+    
+## bibtex
+
+@inproceedings{yang2020appropriatetrust,
+
+author = {Yang, Fumeng and Huang, Zhuanyi and Scholtz, Jean and Arendt, Dustin L.},
+
+title = {How Do Visual Explanations Foster End Users’ Appropriate Trust in Machine Learning?},
+
+year = {2020},
+
+isbn = {9781450371186},
+
+publisher = {Association for Computing Machinery},
+
+address = {New York, NY, USA},
+
+url = {https://doi.org/10.1145/3377325.3377480},
+
+doi = {10.1145/3377325.3377480},
+
+booktitle = {Proceedings of the 25th International Conference on Intelligent User Interfaces},
+
+pages = {189–201},
+
+numpages = {13},
+
+location = {Cagliari, Italy},
+
+series = {IUI ’20}
+}

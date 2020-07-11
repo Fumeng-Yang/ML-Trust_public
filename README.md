@@ -9,10 +9,10 @@ This is almost the same repo as http://www.fmyang.com/projs/ml-trust/. I open th
    - `sub_experiment-images.mp4` and  `sub_experiment-roses.mp4` the videos to illustrate each sub experiment.
 
 ## ML-Trust-presentation.mp4 
-    A 19m informal presentation for the paper.
+A 19m informal presentation for the paper.
 
 ## ML-Trust-slides.pdf
-    The slides for the above-mentioned presentation.
+The slides for the above-mentioned presentation.
 
 ## trust-literature.md
-    Our literature review document.
+Our literature review document.

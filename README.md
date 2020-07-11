@@ -4,8 +4,6 @@ _Proceedings of the ACM Conference on Intelligent User Interfaces (IUI), 2020_
 
 **Authors**: Fumeng Yang, Zhuanyi (Yi) Huang, Jean Scholtz, and Dustin L. Arendt
 
-**Note**: This is almost the same repo as http://www.fmyang.com/projs/ml-trust/. I open this Github page because of my OCD. 
-
 ## supplmaterials
    - `altenative-representations.pdf` The alternative visual representations considered and evaluated in our study;
    - `appendices.pdf`

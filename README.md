@@ -1,5 +1,7 @@
 # How Do Visual Explanations Foster End Users' Appropriate Trust in Machine Learning?
 
+![](ML-Trust-teaser.png)
+
 _Proceedings of the ACM Conference on Intelligent User Interfaces (IUI), 2020_
 
 **Authors**: Fumeng Yang, Zhuanyi (Yi) Huang, Jean Scholtz, and Dustin L. Arendt

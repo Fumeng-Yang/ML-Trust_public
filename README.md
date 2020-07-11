@@ -23,16 +23,13 @@ _Proceedings of the ACM Conference on Intelligent User Interfaces (IUI), 2020_
    - `sub_experiment-images.mp4` and  `sub_experiment-roses.mp4` the videos to illustrate each sub experiment.
 
 ## ML-Trust-presentation.mp4 
-A 19m informal presentation for the paper.
+A 19 minutes informal presentation for the paper.
 
 ## ML-Trust-slides.pdf
 The slides for the above-mentioned presentation.
 
-## trust-literature.md
-<<<<<<< HEAD
-Our literature review document.
-=======
-    Our literature review document.
+## trust-literature.md 
+  Our literature review document.
     
 ## bibtex
 
@@ -51,4 +48,3 @@ numpages = {13},
 location = {Cagliari, Italy},   
 series = {IUI ’20}  
 }
->>>>>>> e08ea6e57ed76017c1fd8888c6c1cf06e297b67e

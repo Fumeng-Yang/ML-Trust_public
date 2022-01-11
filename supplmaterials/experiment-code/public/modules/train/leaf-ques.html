@@ -1,0 +1,93 @@
+<div id="leaf_experience">
+    <div class="header">
+        <h2> Session 2: Background Information </h2>
+        <p class="pid-eid"></p>
+    </div>
+    <div id="leaves_familiarity">
+        A quick question:
+        <br>
+        <span class="question-header"> How would you describe your familiarity with plants' leaves (e.g., common names, shape, texture) at this moment? </span>
+        <br>
+        <table style="width:570px;">
+            <tr class="shorter-tr">
+                <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                <td class="smaller-number-font likert-hack">1</td>
+                <td class="smaller-number-font likert-hack">2</td>
+                <td class="smaller-number-font likert-hack">3</td>
+                <td class="smaller-number-font likert-hack">4</td>
+                <td class="smaller-number-font likert-hack">5</td>
+                <td class="smaller-number-font likert-hack">6</td>
+                <td class="smaller-number-font likert-hack">7</td>
+                <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+            </tr>
+            <tr class="smaller-font">
+                <td class="smaller-font">Not at all familiar</td>
+                <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="1">
+                </td>
+                <td class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="2">
+                </td>
+                <td class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="3">
+                </td>
+                <td class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="4">
+                </td>
+                <td class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="5">
+                </td>
+                <td class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="6">
+                </td>
+                <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                    <input type="radio" name="leaf_familiar" value="7">
+                </td>
+
+                <td class="smaller-font likert-hack ">Very familiar</td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+        <!-- <button id="button-partd" class="proceed_partd_button btn btn-primary"> Next </button> -->
+    </div>
+</div>
+
+<script>
+    d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+
+    data["timestamps"]["leaf-experience"] = {}
+    data["leaf-experience"] = {}
+    data["timestamps"]["leaf-experience"]["loading"] = new Date().getTime();
+
+    experimentr.showNext()
+    experimentr.release()
+
+    d3.select("#next-button")
+        .on("click", function () {
+            let cn = d3.select("input[name=leaf_familiar]:checked").node()
+
+            // if they have unfinished questions
+            if (!cn && !globalDebug) {
+                d3.select("#warning-msg").style("visibility", "visible")
+
+                // the warning message will disappear after 3 secs
+                setTimeout(function () {
+                    d3.select("#warning-msg").style("visibility", "hidden")
+                }, data['settings']['warningTime'])
+
+                data["timestamps"]["leaf-experience"]["unfinished-buttond"] = new Date().getTime();
+            } else {
+                data["leaf-experience"] = cn.value
+                data["timestamps"]["leaf-experience"]["proceed-buttond"] = new Date().getTime();
+                data["timestamps"]["leaf-experience"]["finishing"] = new Date().getTime();
+
+                // save data 
+                experimentr.addData(data);
+
+                // proceed to next session
+                experimentr.next()
+            }
+        })
+</script>

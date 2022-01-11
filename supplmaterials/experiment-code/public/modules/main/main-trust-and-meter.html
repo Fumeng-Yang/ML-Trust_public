@@ -1,0 +1,111 @@
+<div id="main-intro">
+    <div class="header">
+        <h2> Session 3: Classification</h2>
+        <p class="pid-eid"></p>
+    </div>
+
+    <p>
+        We expect you to tell us your trust on each classifier.
+        <b>We use the following definition of trust.
+        </b>
+        <br>
+
+        <i>
+            Trust consists of two components; one is a general attitude towards the performance of an automated system and another is
+            the willingness at a given point in time to accept a recommendation from the automated system. </i>
+    </p>
+
+    <p>
+        You will answer a few quesions for a recommendation, such as whether you will follow it. In a specific instance you may feel
+        that a different recommendation is more appropriate. </p>
+    <p>
+        <b>You will rate your trust on each classifier from
+            <i>completely distrust</i> to
+            <i>complete trust</i> using a
+            <q>trust</q> meter </b> (see below). You measure your trust based on what you have seen and what you are seeing.
+        Not accepting a specific recommendation may or may not change your overall attitude towards the classifier.
+    </p>
+    <p>
+        <b> Adjust the trust meter any time when your trust on a classifier changes.</b>
+    </p>
+
+    <div style="margin-left:40%;">
+        <div id="div-trust-meter" style="display: table-cell;">
+            <div style="margin-left: 20pt;margin-top:10px;margin-bottom:-10pt;">
+                <div class="question-header color-font">Trust Meter</div>
+            </div>
+            <div class="trustcontainer" style="width:140px;">
+                <div id="trust-meter-linear" style="margin-left:9px;">
+                    <!-- <input type="range" style="width:90%;" min="1" max="100" value="50" class="slider" id="myRange"> -->
+                </div>
+                <div style="margin-top: -17pt; margin-right: 30pt; margin-bottom:68pt;">
+                    <!-- <span> -->
+                        <button id="trust-more-button" class="btn btn-primary">&#8593;trust</button>
+                        <button id="trust-less-button" class="btn btn-primary">&#8595;trust</button>
+                        
+                    <!-- </span> -->
+                </div>
+
+                <!-- <div style="margin-left: 15pt;margin-bottom:10px;"> -->
+                <!-- <div class="mider-font question-header " style="margin-bottom: -5pt; ">Trust Meter</div> -->
+                <!-- <div style="margin: 10pt; "> -->
+                <!-- <a id="trust-label" data-toggle="tooltip" data-placement="bottom" style="font-size:10px; background-color: 
+                        #e2e0e0; border-radius: 3px; padding: 1px;" title="Your general attitude towards the performance of the classifier: how much confidence you have in the performance of the classifier. ">
+                            what am I rating?</a>-->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <br>
+    <p>
+        For now, please adjust the trust meter to your general trust toward an automated system. Drag the triangle to adjust the meter
+        precisely or use the two buttons (
+        <q>&#8595; trust</q>,
+        <q>&#8593; trust</q>) to indicate a change.
+        <!-- You can check the expectation by hovering -->
+        <!-- <q>what am I rating?</q> -->
+    </p>
+    <p>
+        Next, you will work with the first classifier. You will see an introduction for this classifier.
+    </p>
+</div>
+<div id="reminder-adjust-meter" class = "color-font">
+    Please adjust the trust meter.
+</div>
+</div>
+
+
+<script>
+    (function () {
+        d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+
+
+        data["main-intro2"] = {}
+        data["timestamps"]["main-intro2"] = {}
+        data["timestamps"]["main-intro2"]["loading"] = new Date().getTime()
+
+        experimentr.showNext();
+        experimentr.hold();
+
+
+        meter.init("main-intro2")
+
+        let inv = setInterval(() => {
+            if (globalDebug) console.log(meter.read())
+            if (meter.read() > 0 || meter.read() < 0) {
+                experimentr.release()
+                window.clearInterval(inv)
+                d3.select("#reminder-adjust-meter").text("You have done adjusting the trust meter. Feel free to proceed when you are ready.")
+            }
+        }, 1000)
+
+        experimentr.onNext(() => {
+            data["initialTrust"] = meter.read()
+            data["timestamps"]["main-intro2"]["finishing"] = new Date().getTime()
+            experimentr.addData(data)
+        })
+
+    }())
+</script>

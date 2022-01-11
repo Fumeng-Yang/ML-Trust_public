@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache" />
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+  crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
+<title>Trust Experiment</title>
+
+<!-- Fumeng: 
+v0.0.1 uses d3.v3 
+v0.0.2 uses d3.v4 (4.13.0), because d3.v5's d3.html doesn't work in nodejs (from d3 document) 
+by default, we use v4 in this project. and if there is a need to use v3, feel free to include the right version, from js/xx.js
+-->
+<script src="/scripts/d3/build/d3.min.js"></script>
+
+<!-- include the controller -->
+<script src="experimentr.js"></script>
+
+<!-- seed random seed -->
+<script src="js/seedrandom.min.js"></script>
+
+<!-- the script to build a sam page -->
+<!-- <script src="modules/SAM/sam.js"></script> -->
+
+<!-- the script to build a trust meter and provide meter read. usage: meter(), meter.resetMeter(), meter.read() -->
+<script src="modules/shared/meter-linear.js"></script>
+
+<!-- the script to build a trial -->
+<script src="modules/shared/trial.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<body>
+</body>
+
+<script>
+  CONTENT_WIDTH = 1000
+  MAX_VIS_HEIGHT = 1000 * 0.95
+  MAX_VIS_WIDTH = 850 * 0.95
+  NUM_TRAINING = 4
+  MAX_PARTICIPANT_NUM = 50
+  IDpools = []
+  globalDebug = false
+
+  trustDefinition =
+    "Trust consists of two components; one is a general attitude towards a system (e.g., a classifier) " +
+    " and another is the willingness at a given point in time to accept a recommendation (e.g., a prediction) from the system (e.g., the classifier)."
+
+  $('[data-toggle="tooltip"]').tooltip({
+    'delay': {
+      show: 0,
+      hide: 0
+    }
+  })
+
+  // the max number of participant we want
+  for (var i = 0; i < MAX_PARTICIPANT_NUM; i++) IDpools.push({
+    "index": i,
+    "participantid": "P" + (i + 1)
+  })
+
+  // specify the procedure we want to follow
+  webSessions = [
+    'modules/setup.html',
+    'modules/consent.html', // skip on the 2nd day
+    'modules/overview/overview.html', // different on the 2nd day
+    'modules/pre-ques/pre-ques.html', // skip on the 2nd day
+    'modules/train/leaf-ques.html', // have to ask
+    'modules/train/train.html', // different on the 2nd day
+    'modules/main/main-task.html',
+    'modules/main/main-trust-and-meter.html',
+    'modules/main/main.html', // different on the 2nd day
+    'modules/post-ques/post-ques.html',
+    'modules/end/end.html'
+  ]
+
+  experimentr.sequence(webSessions).start();
+</script>

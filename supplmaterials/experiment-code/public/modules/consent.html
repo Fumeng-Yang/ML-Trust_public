@@ -1,0 +1,100 @@
+<div id="overview">
+    <div class="header">
+        <h2>CONSENT FORM FOR RESEARCH PARTICIPATION</h2>
+        <p class="pid-eid"></p>
+    </div>
+
+    <div>
+        <h4>Pacific Northwest National Laboratory</h4>
+
+        <p>
+            <b>Project Title</b>: Focal Point Analysis for Trusted Machine Learning</p>
+
+        <p>
+            <b>
+                Investigators</b>: Dustin Arendt, Yi Huang, Jean Scholtz</p>
+        <p>
+            <b>
+                Protocol and Consent Title</b>: Trust in Automated Systems Experiment </p>
+
+        <p>You are being asked to be a volunteer in a research study. </p>
+
+        <p>
+            <b>
+                Purpose</b>: The purpose of this study is to look at trust in automated systems and how various explanations
+            of how the system reached a prediction impact user’s trust and willingness to accept the prediction. </p>
+
+        <p>
+            <b>Exclusion/Inclusion Criteria</b>: You must be at least 18 years old to participate in this study. </p>
+
+        <p>
+            <b>Procedure</b>: If you decide to participate in this experiment you will be asked to use different automated classifiers
+            with two different datasets. You will be trained in each classifier prior to using it. You will be given a
+            <q>trust meter</q> and be introduced on how to use it. For each classifier, you will be given a number of trials. In each
+            trial, the classifier will provide a recommendation and you can either follow or do not follow the recommendation. Additionally,
+            you will be able to adjust the
+            <q>trust meter</q> at any time when your trust in the classifier changes. </p>
+
+        <p>
+            <b>Risks or Discomforts</b>: There should be no risks or discomforts other than sitting at a computer for up to
+            120 minutes.
+        </p>
+
+        <p>
+            <b>Benefits</b>: Participants will not receive any benefits from this experiment with the exception of being exposed
+            to a novel automated classifier with a visual explanation of its decision. </p>
+
+        <p>
+            <b>Compensation to You</b>: You will be given a work package for up to 4 hours for your participation in this research study.
+        </p>
+
+        <p>
+            <b>Confidentiality</b>: Your participation in this research is confidential. We will take every precaution to ensure
+            the security of your data. To minimize the risks to confidentiality, we will encode all data with a participant
+            ID code of the form: Participant##. No part of the participant ID code contains any personal identifying information
+            about you. Because this study involves multiple testing sessions, during your participation, we will maintain
+            a code sheet that helps us properly identify which code has been assigned to you using only your initials. This
+            code sheet is stored in a locked cabinet in a locked room when no investigators are present. As soon as all sessions
+            are over, the code sheet linked to your initials will be destroyed. You will not be identified in any published
+            reports; no findings will be linked to a specific study participant.</p>
+
+        <p>
+            <b>Participant Rights</b>: Your participation in this study is voluntary. You do not have to be in this study if
+            you don’t want to be. You have the right to change your mind and leave the study at any time without giving any
+            reason and without penalty. If you decide not to finish the study, you have the right to withdraw any data collected
+            about you. Should you decide to withdraw from the study, any electronic data will be deleted. You will be given
+            a copy of this consent form to keep. You do not waive any of your legal rights by signing this consent form.</p>
+
+        <p>
+            <b>Questions about the Study</b>: If you have any questions about the study, you may contact Dustin Arendt (509-371-6902,
+            dustin.arendt@pnnl.gov)
+        </p>
+
+        <p>
+            <b>Questions about Your Rights as a Research Participant</b>: If you have any questions about your rights as a research
+            participant, you may contact Susan Varnum (509-371-7299, susan.varnum@pnnl.gov) in Human Research Protection
+            Program/Institutional Review Board.
+        </p>
+
+        <i>If you click the
+            <q>I agree</q> button below, it means that you have read (or have had read to you) the information given in this
+            consent form, and you would like to be a volunteer in this study.</i>
+    </div>
+    <button class="btn btn-primary" id="agree-button">I agree</button>
+</div>
+
+<script>
+    (function () {
+        d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+
+        if (data["experimentIndex"] == 1)
+            experimentr.next()
+
+        experimentr.hideNext()
+
+        d3.select("#agree-button")
+            .on("click", function () {
+                experimentr.next()
+            })
+    }())
+</script>

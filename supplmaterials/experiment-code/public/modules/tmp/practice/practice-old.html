@@ -1,0 +1,22 @@
+<div id="practice" style="width:100%; margin: auto;">
+    <div id="interlude" class="bordercontainer" style="display:none;">
+        <div class="header">
+            <h2> Session 2: Practice Trials</h2>
+        </div>
+        <div class="container">
+            <p> Thanks for finishing this part. Take a short break if you need. Your progress is
+                <span id="interlude-progress">X/Y</span> for this session. </p>
+            <button id="interlude-next" class="btn btn-primary" style="margin-left:25px;">Continue</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    d3.html("modules/shared/trial.html", function (err, d) {
+        if (err) console.error(err)
+        d3.select("#practice").node().appendChild(d)
+        meter.init("practiceSession")
+        trial("practiceSession")
+        if (globalDebug) console.log(data)
+    })
+</script>

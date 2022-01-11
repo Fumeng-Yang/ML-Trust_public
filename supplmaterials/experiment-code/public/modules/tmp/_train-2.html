@@ -1,0 +1,56 @@
+<div class="header">
+    <h2> Session 3: Second Dataset </h2>
+</div>
+
+<div>
+    <div id="example-intro">
+
+    </div>
+    <div id="example-grid">
+
+        <hr>
+    </div>
+
+</div>
+
+<script>
+    setTimeout(function () {
+        if (globalDebug) console.log(data)
+        let sessions = data["sessions"]
+        let secondSession = sessions[1]
+        let datasetName = secondSession[0]['dataset'] // ...
+
+        let name = datasetName + "-examples"
+
+        let examplesText = data['examples'][name].intro
+        let examples = data['examples'][name]["array"]
+
+        d3.select("#example-intro")
+            .append("p")
+            .html(examplesText)
+
+        var allContainers = d3.select("#example-grid")
+            .selectAll("example")
+            .data(examples).enter()
+            .append("div")
+
+        allContainers.append("img")
+            .attr("src", (d) => {
+                return d.path
+            })
+            .style("width", "100px")
+            .style("margin-left", "50px")
+            .style("margin-top", "-5px")
+            .style("margin-bottom", "-15px")
+
+        allContainers.append("span").text((d) => {
+                return d.actualClass
+            })
+            .style("margin-left", "650px")
+        allContainers.append("hr")
+
+        experimentr.release()
+    }, 10)
+
+    //  }())
+</script>

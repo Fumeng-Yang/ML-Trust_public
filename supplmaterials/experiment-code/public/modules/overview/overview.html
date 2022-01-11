@@ -1,0 +1,115 @@
+<div id="overview">
+	<div class="header">
+		<h2>Overview</h2>
+		<p class="pid-eid"></p>
+	</div>
+	<div id="preset">
+		<div>
+			<h4>
+				Do you trust a classifier?
+			</h4>
+			<p>
+				A classifier is a person or a system that uses an object's characteristics to identify which category the object belongs
+				to. You will work with automated machine classifiers to identify objects and decide whether to trust the machine classifiers.
+
+			</p>
+
+			<p>
+
+				We use the following definition of trust. In our experiment, the automated system will be a classifier.
+				<br>
+				<i>
+					Trust consists of two components; one is a general attitude towards the performance of an automated system and another is
+					the willingness at a given point in time to accept a recommendation from the automated system.
+				</i>
+
+			</p>
+		</div>
+
+		<!-- <div>
+			<p>
+				<br>
+				<span>Your paritcipant ID is :
+					<span id="participantID" style="width:100px;">
+					</span>
+					, and this is your
+					<span id="experimentName" style="width:200px;">
+					</span>.
+				</span>
+				You don't have to remember them.
+			</p>
+			<p>
+				<span id="return-reminder">
+					We ask you to return after a few days for a second experiment.
+				</span>
+			</p>
+
+		</div> -->
+	</div>
+
+	<div id="experiment1" style="display: none;">
+		<p>
+			Today's experiment has 4 sessions in total.
+			<br> I. a questionnaire about your background and experience;
+			<br> II. a session introducing background information;
+			<br> III. a session where you work with several classifiers;
+			<br> IV. a questionnaire about your opinion on this experiment.
+		</p>
+		<p>
+			<!-- The whole experiment takes about 90 minutes. You can take a break at any time.  -->
+			You will see detailed instructions in each session. If you have any questions regarding the experiment, feel free to ask
+			the experimenter(s).
+		</p>
+		<p>Please DO NOT refresh the window or go back at any point.
+		</p>
+	</div>
+
+	<div id="experiment2" style="display: none;">
+		<p>
+			Today's experiment has 3 sessions in total.
+			<br> I. a session introducing background information;
+			<br> II. a session where you work with several classifiers;
+			<br> III. a questionnaire about your opinion on this experiment.
+		</p>
+		<p>
+			<!-- The whole experiment takes about 90 minutes. You can take a break at any time.  -->
+			You will see detailed instructions in each session. If you have any questions regarding the experiment, feel free to ask
+			the experimenter(s). </p>
+		<p>Please DO NOT refresh the window or go back at any point.
+		</p>
+	</div>
+</div>
+<script>
+	(function () {
+
+		let status = 0
+
+		experimentr.showNext()
+		experimentr.release()
+
+		data["timestamps"]["experimentStart"] = new Date().getTime();
+		data["timestamps"]["overview"] = {}
+		data["timestamps"]["overview"]["loading"] = new Date().getTime()
+
+
+		d3.select("#return-reminder").style("display", data["experimentIndex"] == 0 ? "block" : "none")
+		d3.select("#participantID").text(data["participantID"])
+		d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+		// override the next-button
+		// build the experiment here
+		d3.select("#next-button").on("click", function () {
+			// build the experimental flow and instances
+			if (status == 0) {
+				data["timestamps"]["overview"]["next1"] = new Date().getTime()
+				d3.select("#preset").style("display", "none")
+				d3.select("#" + data["experimentName"]).style("display", "block")
+				status++
+			} else { // save data
+				data["timestamps"]["overview"]["next2"] = new Date().getTime()
+				experimentr.addData(data)
+				experimentr.next();
+				experimentr.hideNext();
+			}
+		})
+	}());
+</script>

@@ -1,0 +1,205 @@
+<div style="width: 1000px;display: table; margin-left:-15px; margin-top:-15px; margin-bottom:-50px;" id="continuity">
+
+    <p class="warning container bigger-font" id="questions-warning" style="display: none; height:50px;">
+        Please answer all the questions.
+    </p>
+    <div id="left-dashboard" style="width: 850px; display: table-row; float:left;">
+        <div style="display: table-cell;">
+            <div id="top-description">
+                <div class="bordercontainer" style="width:850px;" id="instance-recommendation">
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="machine-name" class="innercontainer" style="display: table-cell; float:left; margin-left: 15pt;">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div id="instance-display" class="innercontainer" style=" display: table-cell; float:left;">
+
+                                </div>
+                            </td>
+                            <td>
+                                <div id="machine-recommendation" class="innercontainer" style="display: table-cell; float:left;">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="trial-step2" id="div-pred-correctness">
+                    <div class="innercontainer container" id="pred-correctness">
+                        <p></p>
+                    </div>
+                </div>
+
+                <div id="explanation-vis" class="innercontainer bordercontainer" style="width:850px;">
+
+                </div>
+            </div>
+
+            <div class="mild-separator"></div>
+
+            <div id="bottom-description">
+
+                <div class="container trial-step1" id="div-questions1">
+                    <div id="div_follow_recommendation">
+                        <span class="question-header"> Will you follow this recommendation?</span>
+                        <br>
+                        <label class="smaller-font">
+                            <input type="radio" name="follow_question" value="follow_recommendation">Follow</label>
+                        <label class="smaller-font" style="margin-left:40px;">
+                            <input type="radio" name="follow_question" value="reject_recommendation"> Don't follow</label>
+                    </div>
+
+
+                    <div class="mild-separator"></div>
+
+                    <div id="div_self_comfort">
+                        <span class="question-header"> How do you feel about your decision above?</span>
+                        <br>
+                        <table style="width:100%;">
+                            <tr class="shorter-tr">
+                                <td style="width:190px;"> </td>
+                                <td class="smaller-number-font likert-hack">1</td>
+                                <td class="smaller-number-font likert-hack">2</td>
+                                <td class="smaller-number-font likert-hack">3</td>
+                                <td class="smaller-number-font likert-hack">4</td>
+                                <td class="smaller-number-font likert-hack">5</td>
+                                <td class="smaller-number-font likert-hack">6</td>
+                                <td class="smaller-number-font likert-hack">7</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="smaller-font">Not at all comfortable</td>
+                                <td class="tr-background" style="border-radius:  5px 0 0 5px;">
+                                    <input type="radio" name="comfort_decision" value="1">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="comfort_decision" value="2">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="comfort_decision" value="3">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="comfort_decision" value="4">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="comfort_decision" value="5">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="comfort_decision" value="6">
+                                </td>
+                                <td class="tr-background" style="border-radius: 0 5px 5px 0;">
+                                    <input type="radio" name="comfort_decision" value="7">
+                                </td>
+
+                                <td class="smaller-font likert-hack">Very comfortable</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mild-separator"></div>
+
+                <div class="container trial-step1" id="div-questions2">
+                    <!-- <div id="div_follow_recommendation" >
+                            <span class="question-header" id="do_you_think_class"> Do you believe this recommendation is correct?</span>
+                            <br>
+                            <label class="smaller-font" style="margin-left:37px;">
+                                <input type="radio" name="recommendation_correctness" value="think_true">Correct</label>
+                            <label class="smaller-font" style="margin-left:40px;">
+                                <input type="radio" name="recommendation_correctness" value="think_false"> Incorrect </label>
+                        </div> -->
+
+                    <!-- <div class="small-separator"></div> -->
+
+                    <div id="div_helpful">
+                        <span class="question-header"> Was the explanation helpful in making the decision above?</span>
+                        <br>
+                        <table style="width:100%;">
+                            <tr class="shorter-tr">
+                                <td style="width:191px;"></td>
+                                <td class="smaller-number-font likert-hack">1</td>
+                                <td class="smaller-number-font likert-hack">2</td>
+                                <td class="smaller-number-font likert-hack">3</td>
+                                <td class="smaller-number-font likert-hack">4</td>
+                                <td class="smaller-number-font likert-hack">5</td>
+                                <td class="smaller-number-font likert-hack">6</td>
+                                <td class="smaller-number-font likert-hack">7</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="smaller-font" align="right">
+                                    <span class="smaller-font" style="margin-right:11.5pt;">Not at all helpful</span>
+                                </td>
+                                <td class="tr-background" style="border-radius:  5px 0 0 5px;">
+                                    <input type="radio" name="helpful_scale" value="1">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="helpful_scale" value="2">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="helpful_scale" value="3">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="helpful_scale" value="4">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="helpful_scale" value="5">
+                                </td>
+                                <td class="tr-background">
+                                    <input type="radio" name="helpful_scale" value="6">
+                                </td>
+                                <td class="tr-background" style="border-radius: 0 5px 5px 0;">
+                                    <input type="radio" name="helpful_scale" value="7">
+                                </td>
+
+                                <td class="smaller-font likert-hack">Extremely helpful</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="mild-separator"></div>
+
+                <p class="trial-step1 container bigger-font color-font adjust-trust-meter-reminder" style="margin-top:50px;margin-bottom:0px;">Please adjust the trust meter if your trust on Classifier <span class="classifier-index color-font">X</span> changes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="right-meter" style="width:120px; display: table-row;float:right;margin-left: 5px;">
+        <div class="container" style="padding: 5px; margin-top: 25px; margin-left: 20px; margin-bottom: 12px;">
+            <button id="submit-button" class="btn btn-primary">Next</button>
+        </div>
+        <div style="display: table-cell;">
+            <div id="div-trust-meter" style="display: table-cell;">
+                <div style="margin-left: 20pt;margin-top:5px;margin-bottom:-10pt;">
+                    <div class="question-header color-font">Trust Meter</div>
+                </div>
+                <div class="trustcontainer" style="width:140px;">
+                    <div id="trust-meter-linear" style="margin-left:9px;">
+                        <!-- <input type="range" style="width:90%;" min="1" max="100" value="50" class="slider" id="myRange"> -->
+                    </div>
+                    <div style="margin-top: -17pt; margin-right: 30pt; margin-bottom:68pt;">
+                        <!-- <span> -->
+                        <button id="trust-more-button" class="btn btn-primary">&#8593;trust</button>
+                        <button id="trust-less-button" class="btn btn-primary">&#8595;trust</button>
+                        <!-- </span> -->
+                    </div>
+
+                    <!-- <div style="margin-left: 15pt;margin-bottom:10px;"> -->
+                    <!-- <div class="mider-font question-header " style="margin-bottom: -5pt; ">Trust Meter</div> -->
+                    <!-- <div style="margin: 10pt; "> -->
+                    <!-- <a id="trust-label" data-toggle="tooltip" data-placement="bottom" style="font-size:10px; background-color: 
+                                    #e2e0e0; border-radius: 3px; padding: 1px;" title="Your general attitude towards the performance of the classifier: how much confidence you have in the performance of the classifier. ">
+                                        what am I rating?</a>-->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

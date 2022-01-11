@@ -1,0 +1,76 @@
+<div id="main" style="width:100%; margin: 0;">
+        <div class="header">
+    
+            <h2> Session 3: Dataset 2
+                <font id="subtitle-in-header" style="color:white;"> Classifier 1 </font>
+                <font id="session-in-header" style="color:white;"> (Practice)</font>
+            </h2>
+        </div>
+    
+    
+        <div id="interlude" class="bordercontainer curtain" style="display:none;">
+            <div class="container">
+                <p> Thanks for finishing this series. Next, you will work with
+                    <b>a different classifier for a different series</b> from the same dataset.
+                </p>
+                <p>
+                    You will start with a few practice trials, followed by the main trials.
+                </p>
+                <p>
+                    <b>Your trust meter will be reseted for this new classifier</b>. Again, you should adjust your trust meter
+                    any time when your trust in the new classifier changes.
+                </p>
+    
+                <p> Now, please take a short break. You will be able to click the
+                    <q>Continue</q> button after
+                    <span id="timer"> 1 m 00 s</span>.
+                </p>
+                <button id="interlude-next" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+            </div>
+        </div>
+    
+        <div id="sessionend" class="bordercontainer curtain" style="display:none;">
+            <div class="container">
+                <p> This session ends. Please click the
+                    <q>Continue</q> button to proceed.
+                </p>
+                <button id="sessionend-button" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+            </div>
+        </div>
+    
+    
+    
+        <div id="practiceend" class="bordercontainer curtain" style="display:none;">
+            <div class="container">
+                <p>
+                    The practice trials for this classifer ends. Take a short break if you need. Next, the main trials will start.
+                </p>
+                <p>
+                    Your trust meter will be reseted for the main trials. Again, you can adjust the trust meter any time if your trust changes.
+                </p>
+                <button id="practiceend-button" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+            </div>
+        </div>
+    
+    
+        <div id="progress-bar" style="color: black; 
+                text-align:center; position: fixed; bottom:0; left:0;
+                vertical-align: bottom;
+                width: 100%; height:30px; 
+                display: table-row; 
+                background-color: #fff;">
+            <span id="session_progress_text" class="foot-note top-hack"></span>
+            <progress id="session_progress" value="0" max="100" style="width: 80%;">
+            </progress>
+        </div>
+    </div>
+    
+    <script>
+        d3.html("modules/shared/trial.html", function (err, d) {
+            if (err) console.error(err)
+            d3.select("#main").node().appendChild(d)
+            meter.init("main2")
+            trial("main2")
+            if (globalDebug) console.log(data)
+        })
+    </script>

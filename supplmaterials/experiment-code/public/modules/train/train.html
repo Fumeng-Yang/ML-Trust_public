@@ -1,0 +1,76 @@
+<div class="header">
+    <h2> Session 2: Background Information </h2>
+    <p class="pid-eid"></p>
+</div>
+
+<div>
+    <div id="example-intro">
+
+    </div>
+    <div id="example-grid">
+        <hr>
+        <div>
+            <span style="margin-left:300px;" class="bigger-font">
+                <b>Example</b>
+            </span>
+            <span style="margin-left:130px;" class="bigger-font">
+                <b>Class/Category</b>
+            </span>
+        </div>
+        <hr>
+    </div>
+
+</div>
+
+<script>
+    d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+
+    let sessionName = "train"
+    data["timestamps"][sessionName] = {}
+    data["timestamps"][sessionName]["loading"] = new Date().getTime()
+
+    setTimeout(function () {
+        if (globalDebug) console.log(data)
+        let sessions = data["sessions"]
+        let datasetName = sessions[0]['dataset'] // ...
+
+        let name = datasetName + "-examples"
+
+        let examplesText = data['examples'][name].intro
+        let examples = data['examples'][name]["array"]
+
+        d3.select("#example-intro")
+            .append("p")
+            .html(examplesText)
+
+        var allContainers = d3.select("#example-grid")
+            .selectAll("example")
+            .data(examples).enter()
+            .append("div")
+
+        allContainers.append("img")
+            .attr("src", (d) => {
+                return d.path
+            })
+            .style("width", "90px")
+            .style("margin-left", "300px")
+            .style("margin-top", "-5px")
+            .style("margin-bottom", "-15px")
+
+        allContainers.append("span").text((d) => {
+                return d.actualClass;
+            })
+            .style("margin-left", "150px")
+        allContainers.append("hr")
+
+        experimentr.showNext()
+        experimentr.release()
+
+        experimentr.onNext(() => {
+            data["timestamps"][sessionName]["finishing"] = new Date().getTime()
+            experimentr.addData(data)
+        })
+    }, 10)
+
+    //  }())
+</script>

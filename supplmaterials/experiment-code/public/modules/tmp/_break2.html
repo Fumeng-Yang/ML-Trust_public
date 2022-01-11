@@ -1,0 +1,50 @@
+<div id="main" style="width:100%; margin: 0;">
+    <div class="header">
+        <h2> Session 3: Dataset 2</h2>
+    </div>
+
+    <div class="bordercontainer curtain">
+        <div class="container">
+            <p> Thanks for finishing all four series for this group (dataset). Next, you will see a different dataset. Again,
+                you will work with different classifiers to identify four series of objects.
+            </p>
+            <p>
+                Similar to the session you just finished, you will see some background information, followed by practice trials and main
+                trials for each series.
+            </p>
+            <p>
+                Now, please take a break. You will be able to click the
+                <q>Next</q> button after
+
+                <span id="timer"> 5 m 00 s</span>.
+
+            </p>
+            <!-- <button id="interlude-next" class="btn btn-primary" style="margin-right:15px;">Continue</button> -->
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let breakTime = globalDebug ? 10 : 60 * 5
+
+    experimentr.showNext()
+    experimentr.hold()
+
+    let inv = setInterval(() => {
+        breakTime--
+        d3.select("#timer").text(() => {
+            let min = Math.floor(breakTime / 60)
+            let sec = breakTime % 60
+            if (min >= 0 && sec >= 0)
+                return min + " m " + sec + " s"
+            else
+                return " 0 m 0 s"
+        })
+    }, 1000)
+
+    setTimeout(() => {
+        window.clearInterval(inv)
+        experimentr.release()
+    }, breakTime * 1100)
+</script>

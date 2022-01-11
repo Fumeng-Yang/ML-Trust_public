@@ -1,0 +1,42 @@
+<div id="main-intro">
+    <div class="header">
+        <h2> Session 3: Classification</h2>
+        <p class="pid-eid"></p>
+    </div>
+    <p>
+        <p>You have 4 classifiers to test out.</p> Each classifier will work with you for a series of leaves. They make
+        a recommendation for which class a leaf belongs to. Diffierent classifiers work in different ways. The same classifier
+        works in the same way for a series.
+    </p>
+    <p>
+        All the classifiers make a correct recommendation about 70-90% of the time. Some might be better; some might be worse.
+        <b>The goal here is to make a good decision -- follow the classifier when it is correct, and do not follow the classifier
+            when it is incorrect.
+        </b>
+    </p>
+    <!-- <p>
+        Rejecting an classifier for incorrectness is as good as following a classifier for correctness. However, following a classifier
+        for incorrectness is as bad as rejecting a classifier for correctness.
+    </p> -->
+</div>
+</div>
+
+<script>
+    (function () {
+        d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+
+
+        data["main-intro1"] = {}
+        data["timestamps"]["main-intro1"] = {}
+        data["timestamps"]["main-intro1"]["loading"] = new Date().getTime()
+
+        experimentr.showNext();
+        experimentr.release()
+
+        experimentr.onNext(() => {
+            data["timestamps"]["main-intro1"]["finishing"] = new Date().getTime()
+            experimentr.addData(data)
+        })
+
+    }())
+</script>

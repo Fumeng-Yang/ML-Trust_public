@@ -1,0 +1,16 @@
+<div class="header">
+    <h2> Experiment Ends </h2>
+    <p class="pid-eid"></p>
+</div>
+<h2 style="margin:auto;">
+    The experiment has finished. Thank you so very much!
+</h2>
+<script>
+    (function () {
+        d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+        console.log(data)
+        data.finished = true
+        experimentr.addData(data)
+        experimentr.save()
+    }())
+</script>

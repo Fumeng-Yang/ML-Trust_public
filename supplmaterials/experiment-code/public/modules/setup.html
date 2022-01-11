@@ -1,0 +1,365 @@
+<div>
+    <div class="header">
+        <h2>Experimenter Page</h2>
+    </div>
+    <div>
+        <span>The paritcipant ID is :
+            <select id="participantID" class="custom-select setupSelect" style="width:100px;">
+                <option value=""></option>
+            </select>
+            , and this is
+            <select id="experimentName" class="custom-select setupSelect" style="width:200px;">
+                <option value=""></option>
+                <option value="experiment1">Experiment 1</option>
+                <option value="experiment2">Experiment 2</option>
+            </select>
+        </span>
+    </div>
+</div>
+<script>
+    //----------------------------------------------------------------------
+    /**
+     * Shuffles array in place.
+     * @param {Array} a items An array containing the items.
+     * steal from https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+     * Fumeng: used it many times, should be fine
+     */
+    //----------------------------------------------------------------------
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    }
+</script>
+
+<script>
+    (function () {
+
+    let status = 0
+    let order =     
+    [[[2, 1, 0, 3], [3, 2, 0, 1]],
+    [[0, 1, 2, 3], [1, 2, 0, 3]],
+    [[3, 2, 0, 1], [0, 2, 3, 1]],
+    [[1, 3, 2, 0], [2, 3, 0, 1]],
+    [[0, 1, 3, 2], [2, 1, 0, 3]],
+    [[2, 3, 1, 0], [1, 3, 2, 0]],
+    [[3, 0, 2, 1], [0, 1, 3, 2]],
+    [[0, 2, 1, 3], [2, 3, 1, 0]],
+    [[1, 2, 3, 0], [0, 3, 2, 1]],
+    [[1, 3, 0, 2], [3, 0, 1, 2]],
+    [[0, 2, 3, 1], [3, 0, 2, 1]],
+    [[2, 0, 1, 3], [0, 2, 1, 3]],
+    [[2, 0, 3, 1], [3, 2, 1, 0]],
+    [[0, 3, 1, 2], [1, 3, 0, 2]],
+    [[2, 1, 3, 0], [1, 2, 3, 0]],
+    [[2, 3, 0, 1], [0, 1, 2, 3]],
+    [[0, 3, 2, 1], [1, 0, 2, 3]],
+    [[3, 0, 1, 2], [2, 0, 1, 3]],
+    [[1, 0, 2, 3], [3, 1, 2, 0]],
+    [[3, 1, 0, 2], [1, 0, 3, 2]],
+    [[3, 1, 2, 0], [2, 0, 3, 1]],
+    [[1, 0, 3, 2], [0, 3, 1, 2]],
+    [[3, 2, 1, 0], [2, 1, 3, 0]],
+    [[1, 2, 0, 3], [3, 1, 0, 2]], 
+    // day1 sees all permutations; day2 sees all permutations; radar sees all permutations, image sees all permutations; nobody sees the same first condition
+    [[0, 3, 2, 1], [2, 3, 1, 0]],
+    [[1, 3, 0, 2], [3, 0, 1, 2]],
+    [[2, 1, 3, 0], [0, 3, 2, 1]],
+    [[3, 1, 0, 2], [1, 3, 0, 2]],
+    [[0, 1, 2, 3], [2, 0, 3, 1]],
+    [[1, 0, 2, 3], [2, 1, 0, 3]],
+    [[2, 3, 1, 0], [3, 1, 2, 0]],
+    [[0, 1, 3, 2], [3, 2, 0, 1]],
+    [[1, 3, 2, 0], [0, 1, 2, 3]],
+    [[2, 0, 1, 3], [1, 0, 2, 3]],
+    [[1, 2, 3, 0], [2, 1, 3, 0]],
+    [[1, 2, 0, 3], [0, 1, 3, 2]],
+    [[3, 1, 2, 0], [0, 2, 1, 3]],
+    [[2, 1, 0, 3], [3, 1, 0, 2]],
+    [[0, 2, 1, 3], [1, 0, 3, 2]],
+    [[2, 3, 0, 1], [1, 2, 0, 3]],
+    [[1, 0, 3, 2], [3, 0, 2, 1]],
+    [[3, 0, 1, 2], [0, 2, 3, 1]],
+    [[3, 0, 2, 1], [1, 2, 3, 0]],
+    [[0, 2, 3, 1], [2, 3, 0, 1]],
+    [[3, 2, 1, 0], [1, 3, 2, 0]],
+    [[0, 3, 1, 2], [2, 0, 1, 3]],
+    [[2, 0, 3, 1], [3, 2, 1, 0]],
+    [[3, 2, 0, 1], [0, 3, 1, 2]],
+    // again, day1 sees all permutations; day2 sees all permutations; radar sees all permutations, image sees all permutations; nobody sees the same first condition
+    [[0, 1, 2, 3], [2, 0, 3, 1]], 
+    [[1, 3, 0, 2], [3, 2, 1, 0]]]
+
+        let conditions = ["control", "grid", "tree", "graph"]
+
+        data = {
+            "experimentStatus": "running",
+            "NUM_TRAINING": 4,
+            "timestamps": {},
+            "scaleFactor": 1.0,
+            "colorNameSame": "blue",
+            "colorNameDiff": "blue",
+            "animationTime": 350,
+            "animationOpacity": 0.5,
+            "settings": {
+                "trustDefinition": trustDefinition,
+                "MAX_PARTICIPANT_NUM": MAX_PARTICIPANT_NUM,
+                "warningTime": 1500,
+                "waitClickTime": 1300,
+                "animationDelay" : 1300,
+                "role": "",
+                "task": "",
+
+                "recommendationCorrectFollowFeedback": "You followed the classifier.   This is a <span class = \"recommendation-correct\">good</span> decision.",
+
+                "recommendationIncorrectFollowFeedback": "You followed the classifier.   This is <span class = \"recommendation-incorrect\">not a good</span> decision.",
+
+                "recommendationCorrectNotFollowFeedback": "You did not follow the classifier.  This is <span class = \"recommendation-incorrect\">not a good</span> decision.",
+
+                "recommendationIncorrectNotFollowFeedback": "You did not follow the classifier.  This is a <span class = \"recommendation-correct\">good</span> decision.",
+
+                "explanations": {
+                    "tree": "<p>The following is an illustration of what you will see. You will see a leaf to classify on the top. The classifier tells you its recommendation, and explains to you how it made the recommendation via a visualization at the bottom.  </p>" +
+                        "If you have any questions/problems, we encourage you to ask the experimenter(s).",
+
+                    "grid": " The following is an illustration of what you will see. You will see  a leaf to classify on the top. The classifier tells you its recommendation, and explains to you how it made the recommendation via a visualization at the bottom.  </p>" +
+                        "<p>If you have any questions/problems, we encourage you to ask the experimenter(s).</p>",
+
+                    "graph": "<p> The following is an illustration of what you will see. You will see a leaf to classify on the top. The classifier tells you its recommendation, and explains to you how it made the recommendation via a visualization at the bottom.  </p>" +
+                        "<p>If you have any questions/problems, we encourage you to ask the experimenter(s).</p>",
+
+                    "control": "<p> The following is an illustration of what you will see. You will see a leaf to classify on the top. The classifier tells you its recommendation.   </p>" +
+                        "<p> If you have any questions/problems, we encourage you to ask the experimenter(s).",
+                }
+            },
+            "globalDebug": globalDebug
+        } // where we hold the data we collected, this is a global variable 
+
+
+        data["timestamps"]["experimentSetup"] = new Date().getTime();
+
+        // render the participant ID options
+        d3.select("#participantID")
+            .selectAll("IDoption")
+            .data(IDpools)
+            .enter()
+            .append("option")
+            .attr("value", function (d) {
+                return d.participantid
+            })
+            .text(function (d) {
+                return d.participantid
+            })
+
+        d3.selectAll(".setupSelect").on("change", () => {
+            let participantID = d3.select("#participantID").node().value.trim()
+            let experimentName = d3.select("#experimentName").node().value.trim()
+
+            data["participantID"] = participantID.trim()
+            data["experimentName"] = experimentName.trim()
+
+
+            if (data["participantID"] != "" && data["experimentName"] != "") {
+                experimentr.release()
+            } else {
+                experimentr.hold()
+            }
+        })
+
+        // override the next-button
+        // build the experiment here
+        d3.select("#next-button").on("click", function () {
+            // build the experimental flow and instances
+            buildExperiment()
+            buildTraining()
+            status++
+            experimentr.addData(data)
+            experimentr.next();
+            experimentr.hideNext();
+
+        })
+
+        //----------------------------------------------------------------------
+        // parse the sequences in sessions
+        // note that all the information needed by a trial should be built here
+        // the trial page should not know anything about how this is built
+        //----------------------------------------------------------------------
+        function buildExperiment() {
+
+            let participantIndex = +data["participantID"].substring(1) - 1
+            let experimentIndex = +data["experimentName"].substring(10).trim() - 1
+
+            data["participantIndex"] = participantIndex
+            data["experimentIndex"] = experimentIndex
+
+            console.log("participantIndex is " + participantIndex + " , participantName is " +
+                data["participantID"] + ", " + data["experimentIndex"] + ", " + experimentIndex)
+
+            d3.json("files/experiment.json", function (err, content) {
+                if (err) console.log(err)
+                if (globalDebug || true) console.log(content)
+
+                // parse instances
+                let sessionsOrigin = content['trials'][participantIndex]
+                let sessionsOrigin2 = content['trials'][(participantIndex + 50) % content['trials'].length]
+                let indiceMaps = content['instances']
+
+                // if (globalDebug) console.log(sessionsOrigin)
+
+                let sessions = []
+
+                let keys = ["images", "radars"]
+                if (participantIndex % 2 == 0) keys = ["images", "radars"]
+                if (participantIndex % 2 == 1) keys = ["radars", "images"]
+
+                keys.forEach((k1, e) => { // indexing which dataset (leaf? or non -leaf?)
+                    let d
+                    if (e == 0) {
+                        d = sessionsOrigin['leaf'] // d consists of ..
+                    } else {
+                        d = sessionsOrigin2['leaf'] // d consists of ..
+                    }
+
+                    let datasetSession = {}
+                    let curIndiceMap = indiceMaps['leaf']
+
+                    d3.keys(d).forEach(k2 => { // indexing which condition (control? grid? etc)
+                        let c = d[k2] // c is a sequence
+
+                        let q = c.map((r, i) => { // build all the information needed in one trial
+                            var one = {}
+                            var instance = curIndiceMap[r]
+
+                            one.id = r
+                            one.index = i
+                            one.actual = instance.actual
+                            one.predicted = instance.predicted
+                            one.instancePath = "files/" + k1 + "/" + one.id +
+                                "__control__" + instance.actual + "__" + instance.predicted +
+                                ".png"
+                            one.predCorrectness = instance.actual === instance.predicted
+                            one.stimulusPath = "files/" + k1 + "/" + one.id + "__" +
+                                k2 + "__" + instance.actual + "__" +
+                                instance.predicted +
+                                ".png"
+                            one.role = data['settings']['role']
+                            one.task = data['settings']['task']
+                            one.doYouThink =
+                                ""
+                            one.actualClassDescription = "This is a " + one.actual +
+                                " leaf. "
+
+                            one.practiceText =
+                                "<span class = \"color-font adjust-trust-meter-reminder\">Please adjust the trust meter if your trust on Classifier <span class=\"classifier-index color-font\">X</span> changes.</span>"
+
+                            one.recommendationCorrectnessDescription =
+                                "Classifier <span class=\"classifier-index\">X</span> is " +
+                                (one.predCorrectness ?
+                                    "<span class = \"recommendation-correct\">correct</span> " :
+                                    "<span class = \"recommendation-incorrect\">incorrect</span> "
+                                ) + " for this recommendation. "
+
+                            one.recommendationDescription =
+                                " represents a <span class = \"targetBold\">" +
+                                instance.predicted +
+                                "</span> leaf."
+
+                            return one
+                        })
+
+                        generalExplantion = {
+                            "tree": //
+                                "The leaf above is outlined in the visual explanation below. The others are known examples. Classifier <span class=\"classifier-index smaller-font\">X</span> connects two examples using an edge (line) if they are very similar.<br> ",
+
+                            "grid": // 
+                                "The leaf above is outlined in the visual explanation below. The others are known examples. Classifier <span class=\"classifier-index smaller-font\">X</span> sorts them by the similarity to the leaf above.<br>",
+
+                            "graph": //
+                                "The leaf above is outlined in the visual explanation below. The others are known examples. Classifier <span class=\"classifier-index smaller-font\">X</span>  connects two examples using an edge (line) if they are very similar. <br>",
+                        }
+
+                        datasetSession[k2] = {
+                            "dataset": k1, // just a name
+                            "condition": k2, // subsession, just a name
+                            "sequence": q, //q.slice(0, NUM_TRAINING + 3), // actual sequence
+                            "trainingThreshold": data['NUM_TRAINING'],
+                            "explanationIntro": data['settings']["explanations"][k2],
+                            "explanationGeneral": generalExplantion[k2]
+                        }
+                        // console.log(datasetSession)
+                    })
+
+                    var tempContainer = [],
+                        temps = {}
+
+                    // shuffle(tempContainer)
+
+                    let orderParticipant = order[participantIndex % order.length]
+                    orderParticipant[experimentIndex].forEach((i) => {
+                        tempContainer.push(datasetSession[conditions[i]])
+                    })
+                    sessions.push(tempContainer)
+                });
+                data['sessions'] = sessions[experimentIndex];
+                data['currentDataset'] = data["sessions"][0]['dataset'] // ...
+            });
+        }
+
+        //----------------------------------------------------------------------
+        // parse the sequences in sessions
+        // select examples
+        //----------------------------------------------------------------------
+        function buildTraining() {
+            data["examples"] = {}
+            data["examples"]["images-examples"] = {}
+            data["examples"]["images-examples"]["array"] = []
+            data["examples"]["radars-examples"] = {}
+            data["examples"]["radars-examples"]["array"] = []
+
+            data["examples"]["images-examples"]["intro"] =
+                "<p><b>Imagine that you are an assistant botanist (plant scientist). You are trying to classify the leaves you collected. You have automated machine classifiers to help you. You are testing out classifiers to find one that could assist you in identifying the leaves. </b></p>" +
+                "<p>The following are examples of leaves you will see, and the plant classes/catergories they belong to. </p>"
+
+            data["examples"]["radars-examples"]["intro"] =
+                "<p><b>Imagine that you are an assistant botanist (plant scientist). You are trying to classify the leaves you collected. </b></p>" +
+                "<p><b>Other senior botanists have extracted some features from the leaves for you. Assume that all the features are reasonable, although they may not be equally important for each leaf class. You use these features to classify the leaves.</b></p>" +
+                "<p>You have automated machine classifiers to help you.  You are testing out classifiers to find one that could assist you in identifying the leaves. </p>" +
+                "<p>Features are drawn on charts; each feature is a slice of the circle; the size (radius) of a slice represents the value of a feature. See the chart below.  <br><img src= \"files/vis/radar.svg\" width = \"120px\"/></p>" +
+                "<p>The following are examples of leaf representations you will see, and the classes/catergories they belong to. "
+
+            d3.json("files/images-examples.json", function (err, content) {
+                if (err) console.log(err)
+                if (globalDebug) console.log(content)
+
+                d3.keys(content).forEach((k) => {
+                    let examples = content[k]
+                    let seed = Math.round((Math.random() * examples.length)) % examples.length // shuffle around
+                    if (examples.length > 0)
+                        data["examples"]["images-examples"]["array"].push(examples[seed])
+                })
+                shuffle(data["examples"]["images-examples"]["array"])
+            });
+            //----------------------------------------------------------------------
+            // the second one
+            //----------------------------------------------------------------------
+            d3.json("files/radars-examples.json", function (err, content) {
+                if (err) console.log(err)
+                if (globalDebug) console.log(content)
+
+                d3.keys(content).forEach((k) => {
+                    let examples = content[k]
+                    let seed = Math.round((Math.random() * examples.length)) % examples.length // shuffle aroundF
+                    if (examples.length > 0)
+                        data["examples"]["radars-examples"]["array"].push(examples[seed])
+                })
+                shuffle(data["examples"]["radars-examples"]["array"])
+            });
+        }
+
+    }());
+</script>

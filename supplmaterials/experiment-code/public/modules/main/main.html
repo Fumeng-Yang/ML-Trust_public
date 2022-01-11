@@ -1,0 +1,90 @@
+<div id="main" style="width:100%; margin: 0;">
+    <div class="header">
+
+        <h2> Session 3:
+            <font id="session-in-header" style="color:white;"> Classifier 1 </font>
+            <font id="subtitle-in-header" style="color:white;"></font>
+        </h2>
+        <p class="pid-eid"></p>
+    </div>
+
+    <div id="classifier-explanation" class="bordercontainer curtain">
+        <div class="container">
+            <p id="vis-intro"></p>
+            <img id="vis-explanation" src="" width="845px;" />
+            <br> You will start with 4 practice trials, and then work with the classifier for a series of leaves. We expect you
+            spend about 1 minute per trial. 
+            <br>
+            <button id="intro-vis-next" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+        </div>
+    </div>
+
+    <div id="interlude" class="bordercontainer curtain" style="display:none;">
+        <div class="container">
+            <p> You have finished this series. We encourage you to take a short break. You will be able to click the
+                <q>Continue</q> button after
+                    <span id="timer"> 1 m 0 s</span>
+               . You are welcome to take a break longer than 1 minute.
+            </p>
+            <p>
+                Next, you will work with
+                <b>a different classifier</b> for a different series. You will first see an introduction of it.
+            </p>
+            <p>
+                <b>Again, the goal is to make a good decision -- follow the classifier when it is correct, and do not follow the classifier when it is incorrect. </b> 
+            </p>
+            <p>
+
+                <b>Your trust meter will be reset for this new classifier. Adjust the trust meter any time</b> when
+                your trust on the classifier changes.
+                <button id="interlude-next" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+        </div>
+    </div>
+
+    <div id="sessionend" class="bordercontainer curtain" style="display:none;">
+        <div class="container">
+            <p> This session ends. Please click the
+                <q>Continue</q> button to proceed.
+            </p>
+            <button id="sessionend-button" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+        </div>
+    </div>
+
+
+
+    <div id="practiceend" class="bordercontainer curtain" style="display:none;">
+        <div class="container">
+            <p>
+                The practice trials for this classifier are finished. Take a short break if you need to. Next, the main trials will start.
+            </p>
+            <p>
+                Your trust meter will be reset. Again, you can adjust the trust meter any time if your trust changes.
+            </p>
+            <button id="practiceend-button" class="btn btn-primary" style="margin-right:15px;">Continue</button>
+        </div>
+    </div>
+
+
+    <div id="progress-bar" style="color: black; 
+            text-align:center; position: fixed; bottom:0; left:0;
+            vertical-align: bottom;
+            width: 100%; height:30px; 
+            display: table-row; 
+            background-color: #fff;">
+        <span id="session_progress_text" class="foot-note top-hack"></span>
+        <progress id="session_progress" value="0" max="100" style="width: 80%;">
+        </progress>
+    </div>
+</div>
+
+<script>
+    d3.selectAll(".pid-eid").text(data["participantID"] + " " + "E" + (data["experimentIndex"] + 1))
+
+    d3.html("modules/shared/trial.html", function (err, d) {
+        if (err) console.error(err)
+        d3.select("#main").node().appendChild(d)
+        meter.init("main", data["experimentIndex"])
+        trial("main", data["experimentIndex"])
+        if (globalDebug) console.log(data)
+    })
+</script>

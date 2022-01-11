@@ -1,0 +1,987 @@
+<div id="demographics">
+    <div class="header">
+        <h2> Session 1: Background </h2>
+        <p class="pid-eid"></p>
+    </div>
+    <div id="ques_0" style="display:block;">
+        <div id="data_analysis_experience">
+            Do you currently do data analysis as part of your job at PNNL?
+            <br>
+            <button id="no-staff" class="expert_button btn btn-primary" value="group_staff">No</button>
+            <button id="yes-expert" class="expert_button btn btn-primary" value="group_data_science"> Yes</button>
+        </div>
+    </div>
+
+    <div id="ques_part_a" class="ques_part" style="display:none;">
+        <h3> Part 1/2 </h3>
+        <p>Please answer all the questions below.</p>
+
+        <div id="ds_div_current_domain">
+            <span class="question-header">What is the current domain in which you conduct data analysis?</span>
+            <input class="form-control" placeholder="e.g., cyber security" name="ds_current_domain" maxlength="200" id="ds_current_domain"
+                type="text" size="80" value="">
+        </div>
+
+        <br>
+        <br>
+
+        <div id="ds_div_working_years">
+            <span class="question-header"> How long have you been working in this domain?</span>
+            <br>
+            <input class="form-control" placeholder="e.g., 5 years" name="ds_working_years" maxlength="200" id="ds_working_years" type="text"
+                size="80" value="">
+        </div>
+
+        <br>
+        <br>
+
+        <div id="ds_div_data_analyst">
+            <span class="question-header">How would you classify yourself as a data analyst?</span>
+            <br>
+            <input type="radio" name="ds_data_analyst" value="novice_analyst" class="smaller-font">
+            <label>Novice</label>
+
+            <input type="radio" name="ds_data_analyst" value="expert_analyst" class="smaller-font">
+            <label>Expert</label>
+        </div>
+
+        <br>
+        <br>
+
+        <div id="ds_div_dataset_size">
+            <span class="question-header">How large is the typical dataset you work with?</span>
+            <input class="form-control" placeholder="e.g., millions, MB" name="ds_dataset_size" maxlength="80" id="ds_dataset_size" type="text"
+                size="80" value="">
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div id="ds_div_dimensionality">
+            <span class="question-header"> What is the dimensionality of the usual dataset you typically work with?</span>
+            <br>
+            <input class="form-control" placeholder="e.g., thousands, 10-50" name="ds_dimensionality" maxlength="80" id="ds_dimensionality"
+                type="text" size="80" value="">
+        </div>
+
+        <br>
+        <br>
+
+        <div id="ds_div_familiarity_supervised">
+            <span class="question-header"> Are you familiar with supervised machine learning?</span>
+            <br>
+            <table style="width:580px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Not at all familiar</td>
+                    <td class="tr-background" style="  border-radius: 5px 0 0 5px;">
+                        <input type="radio" name="ds_familiar_ml" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_familiar_ml" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_familiar_ml" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_familiar_ml" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_familiar_ml" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_familiar_ml" value="6">
+                    </td>
+                    <td class="tr-background" style="border-radius: 0 5px 5px 0;">
+                        <input type="radio" name="ds_familiar_ml" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Extremely familiar</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <br>
+
+        <div id="ds_div_analysis_systems">
+            <span class="question-header">What systems do you use to analyze your data?</span>
+            <br>
+            <input name="ds_analysis_systems" placeholder="e.g., Matlab, Python, Tableau" maxlength="80" id="ds_analysis_systems" type="text"
+                size="80" value="" class="form-control">
+        </div>
+
+        <br>
+        <br>
+
+
+        <div id="ds_div_auto_system_experience">
+            <span class="question-header">Do these systems include automatic analysis (e.g., machine learning, artificial intelligence)?</span>
+            <br>
+            <label>
+                <input type="radio" name="ds_auto_system_experience" value="auto_yes" class="smaller-font"> Yes</label>
+            <label>
+                <input type="radio" name="ds_auto_system_experience" value="auto_no" class="smaller-font"> No</label>
+        </div>
+
+
+        <ol id="ds_survey_system">
+            <br>
+
+            <div id="ds_div_auto_system_names">
+                <span class="question-header">Which system(s) provide automatic analysis?</span>
+                <br>
+                <input name="ds_auto_system_names" placeholder="Type in the system(s)" maxlength="80" id="ds_auto_system_names" type="text"
+                    size="95" value="" class="form-control">
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <div id="ds_div_auto_system_pick">
+                <span class="question-header"> Pick one of the above systems that you like the most or you are most familiar with.</span>
+                <br>
+                <input name="ds_auto_system_pick" placeholder="Type in your pick" maxlength="80" id="ds_auto_system_pick" type="text" size="95"
+                    value="" class="form-control">
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <div id="ds_div_auto_system_trust">
+                <span class="question-header"> Regarding your pick, to what extent do you trust the automated analysis of this system?</span>
+                <br>
+                <table style="width:570px;">
+                    <tr class="shorter-tr">
+                        <td class="smaller-number-font likert-hack" style="width:160px;"></td>
+                        <td class="smaller-number-font likert-hack">1</td>
+                        <td class="smaller-number-font likert-hack">2</td>
+                        <td class="smaller-number-font likert-hack">3</td>
+                        <td class="smaller-number-font likert-hack">4</td>
+                        <td class="smaller-number-font likert-hack">5</td>
+                        <td class="smaller-number-font likert-hack">6</td>
+                        <td class="smaller-number-font likert-hack">7</td>
+                        <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    </tr>
+                    <tr class="smaller-font">
+                        <td class="smaller-font">Don't trust at all</td>
+                        <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="1">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="2">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="3">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="4">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="5">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="6">
+
+                        </td>
+                        <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                            <input type="radio" name="ds_trust_auto_analysis" value="7">
+
+                        </td>
+
+                        <td class="smaller-font likert-hack">Completely trust</td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <br>
+            <br>
+
+
+            <div id="ds_div_auto_system_understanding">
+                <span class="question-header"> Regarding your pick, do you understand that how the automated analysis of this system works?</span>
+                <br>
+                <table style="width:720px;">
+                    <tr class="shorter-tr">
+                        <td class="smaller-number-font likert-hack" style="width:180px;"></td>
+                        <td class="smaller-number-font likert-hack">1</td>
+                        <td class="smaller-number-font likert-hack">2</td>
+                        <td class="smaller-number-font likert-hack">3</td>
+                        <td class="smaller-number-font likert-hack">4</td>
+                        <td class="smaller-number-font likert-hack">5</td>
+                        <td class="smaller-number-font likert-hack">6</td>
+                        <td class="smaller-number-font likert-hack">7</td>
+                        <td class="smaller-number-font likert-hack" style="width:220px;"></td>
+                    </tr>
+                    <tr class="smaller-font">
+                        <td class="smaller-font">Don't understand at all</td>
+                        <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="1">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="2">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="3">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="4">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="5">
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="6">
+
+                        </td>
+                        <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                            <input type="radio" name="ds_understand_auto" value="7">
+
+                        </td>
+
+                        <td class="smaller-font likert-hack">Completely understand</td>
+                    </tr>
+                </table>
+            </div>
+        </ol>
+
+
+        <br>
+        <br>
+
+
+        <div id="ds_div_auto_system_interest">
+            <span class="question-header"> Are you interested in a system that provides automatic analysis for you?</span>
+            <br>
+            <table style="width:680px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:190px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:250px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Not at all interested</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="1">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="2">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="3">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="4">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="5">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="6">
+
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="ds_interested_anto_analysis" value="7">
+
+                    </td>
+
+                    <td class="smaller-font likert-hack">Extremely interested</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div id="ds_div_auto_system_understand_important">
+            <span class="question-header">Is it important for you to understand how the (above) system works?</span>
+            <br>
+            <table style="width:680px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:250px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Not at all important</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="1">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="2">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="3">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="4">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="5">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="6">
+
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="ds_understand_system_important" value="7">
+
+                    </td>
+
+                    <td class="smaller-font likert-hack"> Extremely important</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- end of the questions in part A -->
+        <br>
+        <br>
+        <button id="button-parta" class="proceed_partc_button btn btn-primary"> Next </button>
+    </div>
+    <!-- end of part A -->
+
+
+    <div id="ques_part_b" class="ques_part" style="display:none;">
+        <h3> Part 1/2</h3>
+        Please answer all the questions below.
+        <br>
+        <br>
+        <div id="nov_div_work_description">
+            <span class="question-header"> Please briefly describe your work at PNNL.</span>
+            <br>
+            <input placeholder="e.g., I do..." class="form-control" name="nov_work_description" maxlength="80" id="nov_work_description"
+                type="text" size="80" class="smaller-font">
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div id="nov_div_auto_system_experience">
+            <span class="question-header"> Do you work with any automated system at work (e.g., using some artificial intelligence)?</span>
+            <br>
+            <label>
+                <input type="radio" name="nov_auto_system_experience" value="auto_yes" class="smaller-font"> Yes
+            </label>
+            <label>
+                <input type="radio" name="nov_auto_system_experience" value="auto_no" class="smaller-font"> No
+
+            </label>
+        </div>
+
+        <ol type="a" id="nov_survey_system">
+            <br>
+
+            <div id="nov_div_auto_system_names">
+                <span class="question-header"> Please briefly describe these automated systems and how you use them.</span>
+                <textarea placeholder="Type in the system(s)" class="form-control" name="nov_auto_system_names" maxlength="300" id="nov_auto_system_names"
+                    type="text" cols="94" rows="2" style="resize:none;"></textarea>
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <div id="nov_div_auto_system_pick">
+                <span class="question-header"> Pick one of these systems that you like the most or you are familiar with the most.</span>
+                <br>
+                <input placeholder="Type in your pick" class="form-control" name="nov_auto_system_pick" maxlength="80" id="nov_auto_system_pick"
+                    type="text" size="95" value="" class="smaller-font">
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <div id="nov_div_auto_system_trust">
+                <span class="question-header"> Regarding your pick, how much do you trust the automated portion of this system?</span>
+                <br>
+                <table style="width:650px;">
+                    <tr class="shorter-tr">
+                        <td class="smaller-number-font likert-hack" style="width:130px;"></td>
+                        <td class="smaller-number-font likert-hack">1</td>
+                        <td class="smaller-number-font likert-hack">2</td>
+                        <td class="smaller-number-font likert-hack">3</td>
+                        <td class="smaller-number-font likert-hack">4</td>
+                        <td class="smaller-number-font likert-hack">5</td>
+                        <td class="smaller-number-font likert-hack">6</td>
+                        <td class="smaller-number-font likert-hack">7</td>
+                        <td class="smaller-number-font likert-hack" style="width:200px;"></td>
+                    </tr>
+                    <tr class="smaller-font">
+                        <td class="smaller-font">Don't trust at all</td>
+                        <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="1">
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="2">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="3">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="4">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="5">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="6">
+
+                        </td>
+                        <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                            <input type="radio" name="nov_trust_auto" value="7">
+
+                        </td>
+
+                        <td class="smaller-font likert-hack">Completely trust</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <div id="nov_div_auto_system_understanding">
+                <span class="question-header"> Regarding your pick, how much do you understand the automated portion?</span>
+                <br>
+                <table style="width:720px;">
+                    <tr class="shorter-tr">
+                        <td class="smaller-number-font likert-hack" style="width:180px;"></td>
+                        <td class="smaller-number-font likert-hack">1</td>
+                        <td class="smaller-number-font likert-hack">2</td>
+                        <td class="smaller-number-font likert-hack">3</td>
+                        <td class="smaller-number-font likert-hack">4</td>
+                        <td class="smaller-number-font likert-hack">5</td>
+                        <td class="smaller-number-font likert-hack">6</td>
+                        <td class="smaller-number-font likert-hack">7</td>
+                        <td class="smaller-number-font likert-hack" style="width:220px;"></td>
+                    </tr>
+                    <tr class="smaller-font">
+                        <td class="smaller-font">Don't understand at all</td>
+                        <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="1">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="2">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="3">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="4">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="5">
+
+                        </td>
+                        <td class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="6">
+
+                        </td>
+                        <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                            <input type="radio" name="nov_understand_auto" value="7">
+
+                        </td>
+
+                        <td class="smaller-font likert-hack">Completely understand</td>
+                    </tr>
+                </table>
+            </div>
+
+        </ol>
+        <!-- end of inner survey-->
+
+
+        <br>
+        <br>
+
+
+        <div id="nov_div_auto_system_interest">
+            <span class="question-header"> Are you interested in a system that provides automatic analysis for you?</span>
+            <br>
+            <table style="width:670px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:160px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:200px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Not at all interested</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="1">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="2">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="3">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="4">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="5">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="6">
+
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="nov_interested_anto_analysis" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Extremely interested</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div id="nov_div_auto_system_understand_important">
+            <span class="question-header"> Is it important for you to understand how the (above) system works?</span>
+            <br>
+            <table style="width:670px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:160px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:200px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font"> Not at all important</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="1">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="2">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="3">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="4">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="5">
+
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="6">
+
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="nov_understand_system_important" value="7">
+
+                    </td>
+
+                    <td class="smaller-font likert-hack"> Extremely important</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- end of the questions in part B -->
+        <br>
+        <button id="button-partb" class="proceed_partc_button btn btn-primary"> Next </button>
+    </div>
+    <!-- end of part B -->
+
+
+    <div id="ques_part_c" class="ques_part" style="display:none;">
+        <h3> Part 2/2</h3>
+        <p>
+            Consider the recommendation systems you might use in your daily life: your email spam blocker, Netflix recommendations for movies and TV shows,
+            Facebook recommendations for friends, Amazon recommendations for products, etc. </p>
+        <p>Please rate the statements below on a 7 point scale from
+            <i>Strongly disagree</i> (1) to
+            <i> Strongly agree</i> (7).
+        </p>
+
+        <div class="con_div_ques" id="con_trust">
+            <span class="question-header"> I usually trust automated systems until there is a reason not to.</span>
+            <br>
+            <table style="width:570px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Strongly disagree</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="6">
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="prop_trust_no_reason" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Strongly agree</td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="con_div_ques" id="con_distrust">
+            <span class="question-header"> For the most part, I distrust automated systems.</span>
+            <br>
+            <table style="width:570px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Strongly disagree</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="6">
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="prop_distrust_auto" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Strongly agree</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div class="con_div_ques" id="con_rely">
+            <span class="question-header"> In general, I would rely on an automated system to assist me.</span>
+            <br>
+            <table style="width:570px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Strongly disagree</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="6">
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="prop_rely_assist" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Strongly agree</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div class="con_div_ques" id="con_tendency">
+            <span class="question-header"> My tendency to trust automated systems is high.</span>
+            <br>
+            <table style="width:570px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Strongly disagree</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="6">
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="prop_tend_high" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Strongly agree</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div class="con_div_ques" id="con_easy_trust">
+            <span class="question-header"> It is easy for me to trust automated systems to do their job.</span>
+            <br>
+            <table style="width:570px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Strongly disagree</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="6">
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="prop_trust_job" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack">Strongly agree</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div class="con_div_ques" id="con_trust_little">
+            <span class="question-header"> I am likely to trust an automated system even when I know little about it. </span>
+            <br>
+            <table style="width:570px;">
+                <tr class="shorter-tr">
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                    <td class="smaller-number-font likert-hack">1</td>
+                    <td class="smaller-number-font likert-hack">2</td>
+                    <td class="smaller-number-font likert-hack">3</td>
+                    <td class="smaller-number-font likert-hack">4</td>
+                    <td class="smaller-number-font likert-hack">5</td>
+                    <td class="smaller-number-font likert-hack">6</td>
+                    <td class="smaller-number-font likert-hack">7</td>
+                    <td class="smaller-number-font likert-hack" style="width:170px;"></td>
+                </tr>
+                <tr class="smaller-font">
+                    <td class="smaller-font">Strongly disagree</td>
+                    <td style="border-radius: 5px 0 0 5px;" class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="1">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="2">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="3">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="4">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="5">
+                    </td>
+                    <td class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="6">
+                    </td>
+                    <td style="border-radius: 0 5px 5px 0;" class="tr-background">
+                        <input type="radio" name="prop_trust_know" value="7">
+                    </td>
+
+                    <td class="smaller-font likert-hack ">Strongly agree</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <br>
+
+        <!-- end of the questions in part C -->
+        <button id="button-partc" class="btn btn-primary"> Next </button>
+    </div>
+    <!-- end of part C -->
+
+    <p class="warning" id="warning-msg" style="visibility:hidden;margin-top: 0;">Please answer all the questions.</p>
+
+
+    <script src="modules/pre-ques/pre-ques.js"></script>

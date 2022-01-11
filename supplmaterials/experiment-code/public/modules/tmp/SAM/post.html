@@ -1,0 +1,8 @@
+<script>
+    d3.html("modules/SAM/sam.html", function (err, d) {
+      if (err) console.error(err)
+      d3.select("#module").node().appendChild(d)
+      sam("postSam")
+      if(globalDebug) console.log(data)
+    })
+  </script>

@@ -23,6 +23,7 @@ _Proceedings of the ACM Conference on Intelligent User Interfaces (IUI), 2020_
    - `appendices.pdf`
    - `examples.zip` The experimental stimuli we used;
    - `sub_experiment-images.mp4` and  `sub_experiment-roses.mp4` the videos to illustrate each sub experiment.
+   - `experiment-code`: the web experiment code based on [experimentr](https://github.com/codementum/experimentr).
 
 ## ML-Trust-presentation.mp4 
 A 19 minutes informal presentation for the paper.
